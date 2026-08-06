@@ -1,0 +1,947 @@
+{
+ "generated_note": "counts are live at scan time",
+ "companies_scanned": 51,
+ "boards_resolved": 32,
+ "total_postings": 3497,
+ "keyword_matched": 1029,
+ "llm_discarded": 403,
+ "builds_total": 316,
+ "operates_total": 310,
+ "rows": [
+  {
+   "company": "Relativity Space",
+   "segment": "Space / Launch",
+   "board": "greenhouse",
+   "total_postings": 360,
+   "signal_postings": 86,
+   "builds": 26,
+   "operates": 36,
+   "discarded_by_llm": 24,
+   "build_ratio": 0.42,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [
+    "Grafana",
+    "Prometheus"
+   ],
+   "stack_top": [
+    "MATLAB",
+    "data acquisition systems",
+    "HITL",
+    "NI",
+    "Beckhoff",
+    "accelerometers"
+   ],
+   "score": 7,
+   "tier": "A",
+   "evidence": "Manage a team of test engineers that serve all major products of the Vehicle Integration and Test scope. End-to-end problem ownership and handling of GSE to develop test systems that scale for production.",
+   "evidence_title": "Lead, Manufacturing Test Engineer",
+   "evidence_url": "https://boards.greenhouse.io/relativity/jobs/8508642002?gh_jid=8508642002"
+  },
+  {
+   "company": "Apptronik",
+   "segment": "Humanoid Robotics",
+   "board": "greenhouse",
+   "total_postings": 83,
+   "signal_postings": 30,
+   "builds": 12,
+   "operates": 6,
+   "discarded_by_llm": 12,
+   "build_ratio": 0.67,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [
+    "Grafana"
+   ],
+   "stack_top": [
+    "HIL",
+    "MATLAB",
+    "DAQ",
+    "Grafana",
+    "MuJoCo",
+    "SIL"
+   ],
+   "score": 7,
+   "tier": "A",
+   "evidence": "Take full ownership of HIL (Hardware-in-the-Loop) Testbed Development, designing, building, and maintaining sophisticated automated test environments for rapid, robust, and repeatable verification of new hardware and software.",
+   "evidence_title": "Hardware Integration Engineer - Dexterity",
+   "evidence_url": "https://boards.greenhouse.io/apptronik/jobs/6016652004?gh_jid=6016652004"
+  },
+  {
+   "company": "Hadrian",
+   "segment": "Precision Mfg",
+   "board": "ashby",
+   "total_postings": 134,
+   "signal_postings": 19,
+   "builds": 12,
+   "operates": 1,
+   "discarded_by_llm": 6,
+   "build_ratio": 0.92,
+   "legacy": [
+    "LabVIEW",
+    "TestStand"
+   ],
+   "diy": [
+    "Grafana",
+    "Prometheus"
+   ],
+   "stack_top": [
+    "Prometheus",
+    "Datadog",
+    "Siemens TIA Portal",
+    "Terraform",
+    "Grafana",
+    "Beckhoff TwinCAT 3"
+   ],
+   "score": 7,
+   "tier": "A",
+   "evidence": "- Develop and maintain automated test sequences in Python, LabVIEW, TestStand, or equivalent; build structured data capture with full traceability across station, DUT, instrument, calibration, operator, limits, and results",
+   "evidence_title": "Test Automation Engineer",
+   "evidence_url": "https://jobs.ashbyhq.com/hadrian-automation/340120f4-00e3-48e9-ae8c-e759207d79c5"
+  },
+  {
+   "company": "Ursa Major",
+   "segment": "Space / Propulsion",
+   "board": "greenhouse",
+   "total_postings": 79,
+   "signal_postings": 27,
+   "builds": 10,
+   "operates": 6,
+   "discarded_by_llm": 11,
+   "build_ratio": 0.62,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [
+    "Grafana",
+    "Prometheus"
+   ],
+   "stack_top": [
+    "MATLAB",
+    "DAQ",
+    "Grafana",
+    "Simulink",
+    "fluid systems",
+    "mechanical hardware"
+   ],
+   "score": 7,
+   "tier": "A",
+   "evidence": "Own instrumentation and data acquisition architecture across test assets, including sensor strategy, signal integrity standards, calibration frameworks, distributed DAQ system design, and data quality assurance pipelines;",
+   "evidence_title": "Staff Ground Support Engineer",
+   "evidence_url": "https://ursamajor.com/careers/?gh_jid=4713595005"
+  },
+  {
+   "company": "Torc Robotics",
+   "segment": "Autonomous Trucking",
+   "board": "greenhouse",
+   "total_postings": 56,
+   "signal_postings": 29,
+   "builds": 10,
+   "operates": 6,
+   "discarded_by_llm": 13,
+   "build_ratio": 0.62,
+   "legacy": [
+    "MATLAB",
+    "Simulink",
+    "dSPACE"
+   ],
+   "diy": [
+    "Grafana"
+   ],
+   "stack_top": [
+    "HIL",
+    "ROS/ROS2",
+    "Vector CANoe",
+    "Temporal",
+    "MATLAB",
+    "Simulink"
+   ],
+   "score": 7,
+   "tier": "A",
+   "evidence": "In this role, you will help build and maintain the systems that process vehicle telemetry and validation data, turning raw truck data into measurable signals.",
+   "evidence_title": "Software Engineer I - Metrics for Release",
+   "evidence_url": "https://job-boards.greenhouse.io/torcrobotics/jobs/8676173002"
+  },
+  {
+   "company": "Rocket Lab",
+   "segment": "Space / Launch",
+   "board": "greenhouse",
+   "total_postings": 397,
+   "signal_postings": 151,
+   "builds": 29,
+   "operates": 75,
+   "discarded_by_llm": 47,
+   "build_ratio": 0.28,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink",
+    "TestStand"
+   ],
+   "diy": [
+    "Grafana",
+    "InfluxDB"
+   ],
+   "stack_top": [
+    "MATLAB",
+    "LabVIEW",
+    "Python",
+    "NI",
+    "HITL",
+    "InfluxDB"
+   ],
+   "score": 6,
+   "tier": "A",
+   "evidence": "the Flight Software Intern will be responsible for tooling development related to telemetry and commanding interfaces, (simulation) data post-processing, testing, robustness improvements and visualization.",
+   "evidence_title": "Flight Software Intern - Neutron",
+   "evidence_url": "https://job-boards.greenhouse.io/rocketlab/jobs/7819872003"
+  },
+  {
+   "company": "True Anomaly",
+   "segment": "Space / Defense",
+   "board": "greenhouse",
+   "total_postings": 166,
+   "signal_postings": 90,
+   "builds": 28,
+   "operates": 32,
+   "discarded_by_llm": 30,
+   "build_ratio": 0.47,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [],
+   "stack_top": [
+    "MATLAB",
+    "Python",
+    "LabVIEW",
+    "HIL",
+    "Simulink",
+    "SIL"
+   ],
+   "score": 6,
+   "tier": "A",
+   "evidence": "Experience designing large structural weldments for tooling or GSE applications \u2014 welded steel frames, integration stands, support structures, or handling fixture bases \u2014 including joint selection, weld symbol callouts per AWS A2.",
+   "evidence_title": "Mechanical Engineer, Tooling and MGSE (II-III)",
+   "evidence_url": "https://job-boards.greenhouse.io/trueanomalyinc/jobs/5142909007"
+  },
+  {
+   "company": "Applied Intuition",
+   "segment": "Autonomy Software",
+   "board": "ashby",
+   "total_postings": 261,
+   "signal_postings": 60,
+   "builds": 19,
+   "operates": 15,
+   "discarded_by_llm": 26,
+   "build_ratio": 0.56,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink",
+    "VeriStand",
+    "dSPACE"
+   ],
+   "diy": [],
+   "stack_top": [
+    "HIL",
+    "SIL",
+    "dSPACE",
+    "Simulink",
+    "MATLAB",
+    "Vector CANoe"
+   ],
+   "score": 6,
+   "tier": "A",
+   "evidence": "By building robust HIL/SIL validation pipelines and leveraging cloud-based CI/CD, you will evolve the tooling and automation platforms necessary to scale modern embedded software development across the entire lifecycle.",
+   "evidence_title": "Software Engineer - Virtualization (Vehicle OS)",
+   "evidence_url": "https://jobs.ashbyhq.com/applied/7548c975-a009-4227-b508-6b643f4f3164"
+  },
+  {
+   "company": "Zoox",
+   "segment": "Autonomous Vehicles",
+   "board": "lever",
+   "total_postings": 239,
+   "signal_postings": 61,
+   "builds": 14,
+   "operates": 15,
+   "discarded_by_llm": 32,
+   "build_ratio": 0.48,
+   "legacy": [
+    "MATLAB",
+    "Simulink",
+    "dSPACE"
+   ],
+   "diy": [
+    "Grafana",
+    "Prometheus"
+   ],
+   "stack_top": [
+    "HIL",
+    "Grafana",
+    "pytest",
+    "unittest",
+    "SIL",
+    "MATLAB"
+   ],
+   "score": 6,
+   "tier": "A",
+   "evidence": "Lead the design and maintenance of large-scale event-driven software/hardware -in-the-loop (SIL/HIL) testing frameworks, utilizing advanced software patterns to improve modularity and reduce code duplication.",
+   "evidence_title": "Senior Software Development Engineer in Test - Verification And Validation",
+   "evidence_url": "https://jobs.lever.co/zoox/e1c1b82a-db3f-451e-840d-383d87b4515c"
+  },
+  {
+   "company": "Agility Robotics",
+   "segment": "Humanoid Robotics",
+   "board": "greenhouse",
+   "total_postings": 57,
+   "signal_postings": 17,
+   "builds": 9,
+   "operates": 5,
+   "discarded_by_llm": 3,
+   "build_ratio": 0.64,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "PXI",
+    "Simulink",
+    "dSPACE"
+   ],
+   "diy": [],
+   "stack_top": [
+    "HIL",
+    "DAQ",
+    "AWS S3",
+    "SQL",
+    "NoSQL",
+    "EtherCAT"
+   ],
+   "score": 6,
+   "tier": "A",
+   "evidence": "Develop automated test scripts and contribute to test infrastructure including fixtures, instrumentation, and data acquisition systems to enable repeatable, scalable validation",
+   "evidence_title": "Staff Systems Validation Engineer",
+   "evidence_url": "https://www.agilityrobotics.com/about/job-post?gh_jid=5833376004"
+  },
+  {
+   "company": "Neros Technologies",
+   "segment": "Defense / Drones",
+   "board": "greenhouse",
+   "total_postings": 62,
+   "signal_postings": 21,
+   "builds": 8,
+   "operates": 7,
+   "discarded_by_llm": 6,
+   "build_ratio": 0.53,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [
+    "Grafana",
+    "InfluxDB"
+   ],
+   "stack_top": [
+    "MATLAB",
+    "Simulink",
+    "InfluxDB",
+    "Grafana",
+    "Ansys SIwave",
+    "HyperLynx"
+   ],
+   "score": 6,
+   "tier": "A",
+   "evidence": "Design and maintain the common runtime and libraries other teams consume \u2014 logging, telemetry, IPC, configuration \u2014 and the cross-compile toolchain and SDK",
+   "evidence_title": "Senior Embedded Linux Engineer",
+   "evidence_url": "https://job-boards.greenhouse.io/nerostechnologies/jobs/5195277007"
+  },
+  {
+   "company": "Nuro",
+   "segment": "Autonomous Vehicles",
+   "board": "greenhouse",
+   "total_postings": 102,
+   "signal_postings": 11,
+   "builds": 6,
+   "operates": 1,
+   "discarded_by_llm": 4,
+   "build_ratio": 0.86,
+   "legacy": [
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [
+    "Grafana"
+   ],
+   "stack_top": [
+    "ETL",
+    "BigQuery",
+    "Grafana",
+    "Kubernetes",
+    "HIL",
+    "DAQ"
+   ],
+   "score": 6,
+   "tier": "A",
+   "evidence": "automated data pipelines feeding performance metrics into BigQuery and Grafana, pre/post simulation magic, custom tracing and profiling tools, and much much more.",
+   "evidence_title": "Senior Software Engineer, Performance Tooling and Infrastructure",
+   "evidence_url": "https://nuro.ai/careersitem?gh_jid=7786596"
+  },
+  {
+   "company": "Divergent",
+   "segment": "Advanced Mfg",
+   "board": "greenhouse",
+   "total_postings": 58,
+   "signal_postings": 12,
+   "builds": 3,
+   "operates": 1,
+   "discarded_by_llm": 8,
+   "build_ratio": 0.75,
+   "legacy": [
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [
+    "InfluxDB"
+   ],
+   "stack_top": [
+    "MATLAB",
+    "Simulink",
+    "PLC",
+    "HMI",
+    "SCADA",
+    "InfluxDB"
+   ],
+   "score": 6,
+   "tier": "A",
+   "evidence": "Deliver high-fidelity test data by architecting and integrating instrumentation, DAQ, and control systems that provide reliable, flight-critical measurements for propulsion performance evaluation.",
+   "evidence_title": "Staff Propulsion Test Engineer",
+   "evidence_url": "https://job-boards.greenhouse.io/divergent/jobs/5373490008"
+  },
+  {
+   "company": "Vast Space",
+   "segment": "Space Stations",
+   "board": "greenhouse",
+   "total_postings": 165,
+   "signal_postings": 51,
+   "builds": 14,
+   "operates": 12,
+   "discarded_by_llm": 25,
+   "build_ratio": 0.54,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB"
+   ],
+   "diy": [],
+   "stack_top": [
+    "MATLAB",
+    "DAQ",
+    "ANSYS",
+    "LabVIEW",
+    "NI PXI",
+    "cRIO"
+   ],
+   "score": 5,
+   "tier": "B",
+   "evidence": "Drive maturation of integration and test processes, ensuring documentation, equipment, tooling, process controls, data collection, and training support consistent and streamlined execution.",
+   "evidence_title": "Senior / Staff Build Reliability Engineer (Integration)",
+   "evidence_url": "https://boards.greenhouse.io/vast/jobs/4694236006?gh_jid=4694236006"
+  },
+  {
+   "company": "Apex",
+   "segment": "Space / Satellites",
+   "board": "ashby",
+   "total_postings": 83,
+   "signal_postings": 35,
+   "builds": 14,
+   "operates": 14,
+   "discarded_by_llm": 7,
+   "build_ratio": 0.5,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [],
+   "stack_top": [
+    "MATLAB",
+    "Simulink",
+    "Python",
+    "DAQ",
+    "STK",
+    "GMAT"
+   ],
+   "score": 5,
+   "tier": "B",
+   "evidence": "you will be responsible for developing closed-loop spacecraft test platforms \u2014 such as six degrees of freedom simulation platform (6DOF), software-in-the-loop (SITL) and hardware-in-the-loop (HITL)",
+   "evidence_title": "Simulation Engineer",
+   "evidence_url": "https://jobs.ashbyhq.com/apex-technology-inc/1fa8da57-9ef2-453a-985e-df16a43a5d7a"
+  },
+  {
+   "company": "Astranis",
+   "segment": "Space / Satellites",
+   "board": "greenhouse",
+   "total_postings": 89,
+   "signal_postings": 28,
+   "builds": 13,
+   "operates": 4,
+   "discarded_by_llm": 11,
+   "build_ratio": 0.76,
+   "legacy": [
+    "MATLAB"
+   ],
+   "diy": [],
+   "stack_top": [
+    "HITL",
+    "MATLAB",
+    "thermal chambers",
+    "electrodynamic shakers",
+    "data acquisition systems",
+    "Keysight"
+   ],
+   "score": 5,
+   "tier": "B",
+   "evidence": "In this role, you will be responsible for designing, building, and maintaining the hardware-in-the-loop (HITL) testbeds that serve as the primary proving ground for every satellite we build and fly.",
+   "evidence_title": "Hardware Integration Test Engineer",
+   "evidence_url": "https://job-boards.greenhouse.io/astranis/jobs/4248048006"
+  },
+  {
+   "company": "Mach Industries",
+   "segment": "Defense / Munitions",
+   "board": "ashby",
+   "total_postings": 96,
+   "signal_postings": 43,
+   "builds": 13,
+   "operates": 11,
+   "discarded_by_llm": 19,
+   "build_ratio": 0.54,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [],
+   "stack_top": [
+    "MATLAB",
+    "Python",
+    "Simulink",
+    "SITL",
+    "HITL",
+    "LabVIEW"
+   ],
+   "score": 5,
+   "tier": "B",
+   "evidence": "Design, build, and maintain simulation and validation infrastructure for aircraft systems, including discrete simulations of avionics, sensors, power distribution, flight controls, and embedded software.",
+   "evidence_title": "Senior Software Engineer, Infrastructure & Simulation",
+   "evidence_url": "https://jobs.ashbyhq.com/mach/843dc261-ddae-412c-ac89-636eaef78de8"
+  },
+  {
+   "company": "Saronic",
+   "segment": "Maritime Autonomy",
+   "board": "ashby",
+   "total_postings": 252,
+   "signal_postings": 57,
+   "builds": 12,
+   "operates": 16,
+   "discarded_by_llm": 29,
+   "build_ratio": 0.43,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB"
+   ],
+   "diy": [],
+   "stack_top": [
+    "HITL",
+    "MATLAB",
+    "DAQ",
+    "SCADA",
+    "LabVIEW",
+    "SIEM"
+   ],
+   "score": 5,
+   "tier": "B",
+   "evidence": "You will join the Software team to take an already substantial collection of test capabilities, Hardware-In-The-Loop (HITL) station infrastructure, virtual machine integration tests, replay-based evaluation, and simulation and tur",
+   "evidence_title": "Senior Systems Test Software Engineer",
+   "evidence_url": "https://jobs.ashbyhq.com/saronic/d5f30d63-303c-4899-8d68-c248c8d7905b"
+  },
+  {
+   "company": "Commonwealth Fusion",
+   "segment": "Fusion",
+   "board": "lever",
+   "total_postings": 58,
+   "signal_postings": 11,
+   "builds": 5,
+   "operates": 1,
+   "discarded_by_llm": 5,
+   "build_ratio": 0.83,
+   "legacy": [
+    "MATLAB",
+    "dSPACE"
+   ],
+   "diy": [],
+   "stack_top": [
+    "MATLAB",
+    "Python",
+    "COMSOL",
+    "ANSYS",
+    "dSPACE",
+    "AutoCAD Electrical"
+   ],
+   "score": 5,
+   "tier": "B",
+   "evidence": "Practical experience designing, building, and commissioning fluid systems for specialized pressurized, cryogenic, vacuum, and/or elevated-temperature applications",
+   "evidence_title": "R&D Test Engineer - Fluid Systems",
+   "evidence_url": "https://jobs.lever.co/cfsenergy/27e3a498-9ab0-43a7-896f-75f791aee6bb"
+  },
+  {
+   "company": "Epirus",
+   "segment": "Defense / Directed E.",
+   "board": "greenhouse",
+   "total_postings": 34,
+   "signal_postings": 9,
+   "builds": 3,
+   "operates": 1,
+   "discarded_by_llm": 5,
+   "build_ratio": 0.75,
+   "legacy": [
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [],
+   "stack_top": [
+    "MATLAB",
+    "oscilloscopes",
+    "logic analyzers",
+    "Simulink",
+    "Python"
+   ],
+   "score": 5,
+   "tier": "B",
+   "evidence": "Experience implementing Complex DSP Algorithms on FPGAs using tools such as Matlab, Simulink, HDL Coder to implement advanced communications or other designs in FPGA",
+   "evidence_title": "Senior FPGA Engineer",
+   "evidence_url": "https://www.epirusinc.com/open-roles?gh_jid=5982320004"
+  },
+  {
+   "company": "Figure AI",
+   "segment": "Humanoid Robotics",
+   "board": "greenhouse",
+   "total_postings": 126,
+   "signal_postings": 26,
+   "builds": 6,
+   "operates": 6,
+   "discarded_by_llm": 14,
+   "build_ratio": 0.5,
+   "legacy": [
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [],
+   "stack_top": [
+    "MATLAB",
+    "DAQ",
+    "Python",
+    "LTspice",
+    "Simulink"
+   ],
+   "score": 4,
+   "tier": "B",
+   "evidence": "We are looking for a Mechanical Engineer to support the test infrastructure team to design, and build prototype hardware across our integration and test teams.",
+   "evidence_title": "Mechanical Engineer - Integration & Test",
+   "evidence_url": "https://job-boards.greenhouse.io/figureai/jobs/4672013006"
+  },
+  {
+   "company": "Helion Energy",
+   "segment": "Fusion",
+   "board": "ashby",
+   "total_postings": 109,
+   "signal_postings": 32,
+   "builds": 6,
+   "operates": 12,
+   "discarded_by_llm": 14,
+   "build_ratio": 0.33,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "PXI",
+    "Simulink"
+   ],
+   "diy": [
+    "Grafana",
+    "InfluxDB"
+   ],
+   "stack_top": [
+    "MATLAB",
+    "Python",
+    "DAQ",
+    "LabVIEW",
+    "PXI",
+    "cRIO"
+   ],
+   "score": 4,
+   "tier": "B",
+   "evidence": "- Build, wire, debug, and maintain complete test racks and fixtures, including power distribution, safety interlocks, signal routing, and data acquisition integration",
+   "evidence_title": "Senior Test Engineer",
+   "evidence_url": "https://jobs.ashbyhq.com/helion/3a958165-7937-4eb1-b0b3-9d8dab3c0d1d"
+  },
+  {
+   "company": "Venus Aerospace",
+   "segment": "Hypersonics",
+   "board": "lever",
+   "total_postings": 21,
+   "signal_postings": 13,
+   "builds": 5,
+   "operates": 4,
+   "discarded_by_llm": 4,
+   "build_ratio": 0.56,
+   "legacy": [
+    "DIAdem",
+    "LabVIEW",
+    "MATLAB",
+    "PXI"
+   ],
+   "diy": [],
+   "stack_top": [
+    "cRIO",
+    "LabVIEW",
+    "MATLAB",
+    "Python",
+    "DIAdem",
+    "HIL"
+   ],
+   "score": 4,
+   "tier": "B",
+   "evidence": "Develop and maintain hardware-in-the-loop (HITL) test environments to support software development, integration, and verification",
+   "evidence_title": "Principal Avionics Engineer",
+   "evidence_url": "https://jobs.lever.co/venusaero/a9df21e0-c18c-46d5-8f62-d2c5f31c6011"
+  },
+  {
+   "company": "Kodiak Robotics",
+   "segment": "Autonomous Trucking",
+   "board": "greenhouse",
+   "total_postings": 67,
+   "signal_postings": 18,
+   "builds": 2,
+   "operates": 2,
+   "discarded_by_llm": 14,
+   "build_ratio": 0.5,
+   "legacy": [
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [
+    "Grafana",
+    "Prometheus"
+   ],
+   "stack_top": [
+    "MATLAB",
+    "Simulink",
+    "Ansible",
+    "Terraform",
+    "Grafana",
+    "Prometheus"
+   ],
+   "score": 4,
+   "tier": "B",
+   "evidence": "This individual will lead the effort end-to-end: from product and system requirement definition, through architecture and implementation, to verification and validation, and safety case integration.",
+   "evidence_title": "Senior Systems Engineer, Fault Management ",
+   "evidence_url": "https://job-boards.greenhouse.io/kodiak/jobs/4203236009"
+  },
+  {
+   "company": "Skydio",
+   "segment": "Drones / Autonomy",
+   "board": "ashby",
+   "total_postings": 115,
+   "signal_postings": 16,
+   "builds": 7,
+   "operates": 2,
+   "discarded_by_llm": 7,
+   "build_ratio": 0.78,
+   "legacy": [],
+   "diy": [],
+   "stack_top": [
+    "wireless test equipment",
+    "protocol analyzer",
+    "PHY level test equipment",
+    "test infrastructure",
+    "Python",
+    "SCADA"
+   ],
+   "score": 3,
+   "tier": "C",
+   "evidence": "Implement processes and tools to enable efficient product development and testing, including test infrastructure (SW and HW), system maturity/risk tracking, and accountability systems",
+   "evidence_title": "Systems Integration and Test Engineer (Mid to Senior Level)",
+   "evidence_url": "https://jobs.ashbyhq.com/skydio/a1a60b27-53a8-455e-b467-712e01c532dc"
+  },
+  {
+   "company": "Oklo",
+   "segment": "Nuclear",
+   "board": "greenhouse",
+   "total_postings": 64,
+   "signal_postings": 12,
+   "builds": 4,
+   "operates": 3,
+   "discarded_by_llm": 5,
+   "build_ratio": 0.57,
+   "legacy": [
+    "LabVIEW"
+   ],
+   "diy": [],
+   "stack_top": [
+    "modeling and simulation tools",
+    "SCADA",
+    "SQL",
+    "LabVIEW",
+    "DAQ"
+   ],
+   "score": 3,
+   "tier": "C",
+   "evidence": "Design, implement, and manage SQL databases to store process and product quality data, developing inventory tracking and control tools.",
+   "evidence_title": "Controls Engineer, Fuel Fabrication",
+   "evidence_url": "https://job-boards.greenhouse.io/oklo/jobs/6114732004"
+  },
+  {
+   "company": "Kairos Power",
+   "segment": "Nuclear",
+   "board": "greenhouse",
+   "total_postings": 24,
+   "signal_postings": 6,
+   "builds": 1,
+   "operates": 1,
+   "discarded_by_llm": 4,
+   "build_ratio": 0.5,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB"
+   ],
+   "diy": [],
+   "stack_top": [
+    "LabVIEW",
+    "MATLAB",
+    "PLCs"
+   ],
+   "score": 3,
+   "tier": "C",
+   "evidence": "Experience with prototype or test rig development for mechanical systems.",
+   "evidence_title": "Senior Nuclear Facility Engineer",
+   "evidence_url": "https://job-boards.greenhouse.io/kairospower/jobs/5704966004"
+  },
+  {
+   "company": "Impulse Space",
+   "segment": "Space / Propulsion",
+   "board": "ashby",
+   "total_postings": 3,
+   "signal_postings": 1,
+   "builds": 1,
+   "operates": 0,
+   "discarded_by_llm": 0,
+   "build_ratio": 1.0,
+   "legacy": [],
+   "diy": [],
+   "stack_top": [
+    "Python",
+    "SCPI"
+   ],
+   "score": 2,
+   "tier": "C",
+   "evidence": "Experience building an in-house hardware capability that had previously been outsourced.",
+   "evidence_title": "Staff Systems Electrical Engineer- Hardware Development",
+   "evidence_url": "https://jobs.ashbyhq.com/impulse/9c515dba-d660-41b5-af1b-3cfe85ee9349"
+  },
+  {
+   "company": "HavocAI",
+   "segment": "Maritime Autonomy",
+   "board": "ashby",
+   "total_postings": 22,
+   "signal_postings": 5,
+   "builds": 2,
+   "operates": 2,
+   "discarded_by_llm": 1,
+   "build_ratio": 0.5,
+   "legacy": [],
+   "diy": [],
+   "stack_top": [
+    "HIL"
+   ],
+   "score": 1,
+   "tier": "C",
+   "evidence": "Build internal AI infrastructure that connects LLMs and AI agents with internal tools, APIs, data sources, data lakes, telemetry stores, simulation tools, code repositories, documentation systems, logs, and engineering workflows.",
+   "evidence_title": "AI Infrastructure Engineer \u2013 Agents & ML Systems",
+   "evidence_url": "https://jobs.ashbyhq.com/havocai/69843537-34f3-41e3-a69b-0ce11259d121"
+  }
+ ],
+ "suppressed": [
+  {
+   "company": "Varda Space",
+   "segment": "Space / Manufacturing",
+   "board": "greenhouse",
+   "total_postings": 85,
+   "signal_postings": 44,
+   "builds": 20,
+   "operates": 9,
+   "discarded_by_llm": 15,
+   "build_ratio": 0.69,
+   "legacy": [
+    "LabVIEW",
+    "MATLAB",
+    "Simulink"
+   ],
+   "diy": [
+    "Grafana",
+    "InfluxDB",
+    "Prometheus"
+   ],
+   "stack_top": [
+    "MATLAB",
+    "Grafana",
+    "InfluxDB",
+    "Python",
+    "DAQ",
+    "TwinCAT 3"
+   ],
+   "score": 8,
+   "tier": "A",
+   "evidence": "Own it end-to-end: architecture, schematics, mechanical design, build, and operations for propulsion hardware and bus-integrated fluid systems across spacecraft programs, including satellite bus GSE, engine development test stands",
+   "evidence_title": "Senior Propulsion Engineer - Hardware and Bus Systems",
+   "evidence_url": "https://job-boards.greenhouse.io/vardaspace/jobs/7789366003",
+   "suppressed_reason": "named customer (Contrary Research)"
+  },
+  {
+   "company": "Radiant Nuclear",
+   "segment": "Nuclear",
+   "board": "ashby",
+   "total_postings": 29,
+   "signal_postings": 8,
+   "builds": 2,
+   "operates": 4,
+   "discarded_by_llm": 2,
+   "build_ratio": 0.33,
+   "legacy": [],
+   "diy": [
+    "Grafana",
+    "InfluxDB",
+    "Prometheus"
+   ],
+   "stack_top": [
+    "Grafana",
+    "Prometheus",
+    "InfluxDB",
+    "gRPC",
+    "REST"
+   ],
+   "score": 1,
+   "tier": "C",
+   "evidence": "You will build the internal control plane that transforms high-volume telemetry\u2014logs, metrics, and events\u2014into actionable insight for engineering and operations teams.",
+   "evidence_title": "Infrastructure Tooling & Observability Engineer( UK)",
+   "evidence_url": "https://jobs.ashbyhq.com/radiant/d14f4cd4-cb51-4b77-8af2-917ae28f7119",
+   "suppressed_reason": "named customer (Contrary Research)"
+  }
+ ]
+}
