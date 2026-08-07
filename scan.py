@@ -21,7 +21,7 @@ Two failure modes this file exists to prevent:
 
 Both stages cache to data/, so re-running is free and resumable.
 """
-import json, os, re, time, html
+import json, os, re, time, html, datetime
 import requests
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -32,6 +32,7 @@ DATA = os.path.join(HERE, "data")
 os.makedirs(DATA, exist_ok=True)
 BOARDS_F = os.path.join(DATA, "boards.json")
 POSTINGS_F = os.path.join(DATA, "postings.json")
+META_F = os.path.join(DATA, "meta.json")
 
 UA = {"User-Agent": "Mozilla/5.0 (compatible; test-infra-build-index/1.0)"}
 
@@ -167,6 +168,10 @@ def main():
                     print(f"  -- {meta['company']}")
         json.dump(list(boards.values()), open(BOARDS_F, "w"), indent=1)
         json.dump(postings, open(POSTINGS_F, "w"))
+        # Stamp when postings were pulled. Carried through to the page so a later
+        # re-render cannot misdate the data, and so dead links read as an expected
+        # property of a dated snapshot rather than as a broken page.
+        json.dump({"scanned": datetime.date.today().isoformat()}, open(META_F, "w"))
 
     total = sum(len(v) for v in postings.values())
     strict = sum(1 for v in postings.values() for j in v if signals(j["text"]))

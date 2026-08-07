@@ -112,8 +112,11 @@ def main():
 
     rows.sort(key=lambda r: (-r["score"], -r["builds"]))
 
+    meta_f = os.path.join(HERE, "data", "meta.json")
+    scanned = json.load(open(meta_f))["scanned"] if os.path.exists(meta_f) else "unknown"
+
     out = {
-        "generated_note": "counts are live at scan time",
+        "scanned": scanned,
         "companies_scanned": len(BOARDS),
         "boards_resolved": len([b for b in BOARDS.values() if b.get("job_count")]),
         "total_postings": sum(len(v) for v in POSTINGS.values()),

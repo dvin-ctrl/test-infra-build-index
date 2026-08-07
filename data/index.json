@@ -1,5 +1,5 @@
 {
- "generated_note": "counts are live at scan time",
+ "scanned": "2026-08-06",
  "companies_scanned": 51,
  "boards_resolved": 32,
  "total_postings": 3497,
@@ -911,7 +911,7 @@
    "evidence": "Own it end-to-end: architecture, schematics, mechanical design, build, and operations for propulsion hardware and bus-integrated fluid systems across spacecraft programs, including satellite bus GSE, engine development test stands",
    "evidence_title": "Senior Propulsion Engineer - Hardware and Bus Systems",
    "evidence_url": "https://job-boards.greenhouse.io/vardaspace/jobs/7789366003",
-   "suppressed_reason": "named customer (Contrary Research)"
+   "suppressed_reason": "named customer (Contrary Research report)"
   },
   {
    "company": "Radiant Nuclear",
@@ -941,7 +941,7 @@
    "evidence": "You will build the internal control plane that transforms high-volume telemetry\u2014logs, metrics, and events\u2014into actionable insight for engineering and operations teams.",
    "evidence_title": "Infrastructure Tooling & Observability Engineer( UK)",
    "evidence_url": "https://jobs.ashbyhq.com/radiant/d14f4cd4-cb51-4b77-8af2-917ae28f7119",
-   "suppressed_reason": "named customer (Contrary Research)"
+   "suppressed_reason": "named customer (Contrary Research report)"
   }
  ]
 }

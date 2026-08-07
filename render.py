@@ -18,6 +18,16 @@ KNOWN = {
 }
 e = html.escape
 
+# Snapshot date, carried from scan time. A dated snapshot is honest about link rot:
+# job postings close, so some links will 404 over time. That is expected, not a bug.
+_iso = D.get("scanned", "")
+try:
+    import datetime as _dt
+    _d = _dt.date.fromisoformat(_iso)
+    SCANNED = f"{_d.day} {_d.strftime('%B %Y')}"
+except Exception:
+    SCANNED = _iso or "unknown"
+
 
 def chips(items, cls="chip"):
     return "".join(f'<span class="{cls}">{e(t)}</span>' for t in items)
@@ -204,6 +214,9 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
      Nominal sells, ranked from public job board APIs alone, so a rep opens with a named
      req instead of a guess.</p>
   <p class="src">
+     <strong style="color:var(--signal)">Snapshot scanned {SCANNED}.</strong>
+     Postings close over time, so some links below will expire. That is a property of a
+     dated scan, not a broken page. Re-running the scanner refreshes every number.<br>
      51 companies probed &middot; {D['boards_resolved']} boards resolved &middot;
      {D['total_postings']:,} live postings read &middot; {D['builds_total']} build-posture reqs<br>
      Ashby / Greenhouse / Lever public APIs, no auth, no paid enrichment &middot;
@@ -389,9 +402,9 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 </section>
 
 <footer style="border-top:1px solid var(--line);padding-top:1.2rem">
-  <p class="src" style="margin:0">Built by Dvin Malekian &middot; scanner source and method
-     published alongside this page &middot; every number here is reproducible from public
-     endpoints</p>
+  <p class="src" style="margin:0">Built by Dvin Malekian &middot; scanned {SCANNED} &middot;
+     scanner source and method published alongside this page &middot; every number here is
+     reproducible from public endpoints</p>
 </footer>
 
 </div>
