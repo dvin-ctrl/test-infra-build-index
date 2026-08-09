@@ -16,6 +16,8 @@ KNOWN = {
     "Beckhoff", "Beckhoff TwinCAT 3", "Siemens TIA Portal", "Terraform", "Python",
     "HITL", "MuJoCo", "SIL", "Ignition", "Kepware", "OPC UA",
 }
+from collections import Counter
+
 e = html.escape
 
 # Snapshot date, carried from scan time. A dated snapshot is honest about link rot:
@@ -29,18 +31,39 @@ except Exception:
     SCANNED = _iso or "unknown"
 
 
-def chips(items, cls="chip"):
-    return "".join(f'<span class="{cls}">{e(t)}</span>' for t in items)
+MIN_MENTIONS = D.get("min_mentions", 2)
+MIN_RATE = D.get("min_rate", 0.05)
+_rel = next((r for r in D["rows"] if r["company"] == "Relativity Space"), None)
+REL = {t: n for t, n in (_rel["legacy"] if _rel else [])}
+REL_POSTINGS = (_rel["builds"] + _rel["operates"]) if _rel else 0
+TIERS = Counter(r["tier"] for r in D["rows"])
+NAIVE_CUT = 2427
+LEGACY_PREV = Counter()
+for _r in D["rows"]:
+    for _t, _n in _r["legacy"]:
+        LEGACY_PREV[_t] += 1
+
+
+def chips(pairs, cls="chip"):
+    """Render [tool, count] pairs. Tools below the corroboration threshold are
+    dimmed, so a tool named once cannot pass for a tool named sixteen times."""
+    out = []
+    for t, n in pairs:
+        weak = " weak" if n < MIN_MENTIONS else ""
+        out.append(f'<span class="{cls}{weak}">{e(t)}<span class="ct">&times;{n}</span></span>')
+    return "".join(out)
 
 
 rows_html = []
 for i, r in enumerate(D["rows"], 1):
-    stack = [t for t in r["stack_top"] if t in KNOWN][:5]
+    stack = [[t, n] for t, n in r["stack_top"] if t in KNOWN][:5]
     legacy = r["legacy"][:4]
+    inc = (f'<span class="inc">incumbent: {e(r["incumbent_note"])}</span>'
+           if r.get("incumbent_note") else "")
     tier_cls = {"A": "t-a", "B": "t-b", "C": "t-c"}[r["tier"]]
     rows_html.append(f"""<tr>
   <td class="n dim">{i}</td>
-  <td class="co"><span class="name">{e(r['company'])}</span><span class="seg">{e(r['segment'])}</span></td>
+  <td class="co"><span class="name">{e(r['company'])}</span><span class="seg">{e(r['segment'])}</span>{inc}</td>
   <td><span class="tier {tier_cls}">{r['tier']}</span></td>
   <td class="n">{r['score']}</td>
   <td class="n strong">{r['builds']}</td>
@@ -52,14 +75,20 @@ for i, r in enumerate(D["rows"], 1):
 <tr class="ev">
   <td></td>
   <td colspan="8">
+    <span class="scope">single highest-confidence req &middot; not the source of the stack chips above</span><br>
     <a href="{e(r['evidence_url'])}" target="_blank" rel="noopener">{e(r['evidence_title'])}</a>
     <q>{e(r['evidence'])}</q>
   </td>
 </tr>""")
 
+comp_html = "".join(
+    f"""<li><strong>{e(c['company'])}</strong>
+    <span class="why">{e(c['excluded_reason'])}</span></li>"""
+    for c in sorted(D.get("competitors", []), key=lambda x: -x["score"]))
+
 sup_html = "".join(
     f"""<li><strong>{e(s['company'])}</strong> <span class="mono dim">score {s['score']}, {s['builds']} build-posture reqs</span>
-    <span class="why">{e(s['suppressed_reason'])}</span></li>"""
+    <span class="why">{e(s['excluded_reason'])}</span></li>"""
     for s in sorted(D["suppressed"], key=lambda x: -x["score"]))
 
 UNREACHED = ["Joby Aviation", "Beta Technologies", "Boston Dynamics", "Stoke Space",
@@ -203,6 +232,12 @@ ul.plain .why {{ display:block; font-family:var(--mono); font-size:.65rem;
 code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   border:1px solid var(--line); padding:.06em .32em; }}
 .tags {{ font-family:var(--mono); font-size:.72rem; color:var(--dim); line-height:2; }}
+.chip .ct {{ opacity:.6; margin-left:.28em; font-size:.92em; }}
+.chip.weak {{ opacity:.45; }}
+.scope {{ font-family:var(--mono); font-size:.58rem; letter-spacing:.06em;
+  text-transform:none; color:var(--dim); font-weight:400; }}
+.co .inc {{ display:block; font-family:var(--mono); font-size:.6rem; color:var(--warm);
+  margin-top:.18rem; }}
 .specs {{ display:flex; flex-direction:column; gap:1.15rem; margin-top:.4rem; }}
 .spec .lbl {{ font-family:var(--mono); font-size:.62rem; letter-spacing:.15em;
   text-transform:uppercase; color:var(--signal); display:block; margin-bottom:.45rem; }}
@@ -247,9 +282,9 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
     <div class="tile acc"><span class="k">Build-posture reqs</span><span class="v">{D['builds_total']}</span>
       <span class="s">hiring to build, not operate</span></div>
     <div class="tile"><span class="k">Accounts ranked</span><span class="v">{len(D['rows'])}</span>
-      <span class="s">13 tier A, 11 tier B, 5 tier C</span></div>
-    <div class="tile"><span class="k">Suppressed</span><span class="v">{len(D['suppressed'])}</span>
-      <span class="s">already Nominal customers</span></div>
+      <span class="s">{TIERS['A']} tier A, {TIERS['B']} tier B, {TIERS['C']} tier C</span></div>
+    <div class="tile"><span class="k">Excluded</span><span class="v">{len(D['suppressed']) + len(D['competitors'])}</span>
+      <span class="s">{len(D['suppressed'])} customers, {len(D['competitors'])} competitor</span></div>
     <div class="tile"><span class="k">Cost to run</span><span class="v">$0.11</span>
       <span class="s">one gpt-4o-mini pass</span></div>
   </div>
@@ -296,8 +331,8 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
         <code>POST api.openai.com/v1/chat/completions</code>
         <span class="what">gpt-4o-mini at temperature 0, structured output via
           <code>json_schema</code> with <code>strict:true</code>. Returns build-versus-operate
-          posture, named stack, and a verbatim evidence quote. 1,029 calls.</span>
-        <span class="cost paid">$0.109</span>
+          posture, named stack, and a verbatim evidence quote. {D['keyword_matched']:,} calls.</span>
+        <span class="cost paid">$0.111</span>
       </div>
       <div class="srow">
         <code>python3 &middot; requests &middot; ThreadPoolExecutor</code>
@@ -307,7 +342,7 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
       </div>
       <div class="srow">
         <code>re &middot; word-boundary matching</code>
-        <span class="what">Pre-filter cutting 3,497 postings to 1,029 before any model call.
+        <span class="what">Pre-filter cutting {D['total_postings']:,} postings to {D['keyword_matched']:,} before any model call.
           Acronyms case-sensitive, phrases case-insensitive. This is what keeps
           classification under a dime.</span>
         <span class="cost free">free</span>
@@ -342,7 +377,7 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   <div class="funnel">
     <div class="step"><span class="v">{D['total_postings']:,}</span><span class="k">postings pulled</span></div>
     <div class="step"><span class="v">{D['keyword_matched']:,}</span><span class="k">keyword match</span>
-      <span class="cut">&minus;2,398 naive false positives</span></div>
+      <span class="cut">&minus;{NAIVE_CUT:,} naive false positives</span></div>
     <div class="step"><span class="v">{D['builds_total'] + D['operates_total']}</span><span class="k">genuinely test-related</span>
       <span class="cut">&minus;{D['llm_discarded']} discarded by classifier</span></div>
     <div class="step"><span class="v">{D['builds_total']}</span><span class="k">build posture</span>
@@ -354,14 +389,21 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   <h2>Ranked accounts</h2>
   <p>Score is 0 to 8 and is computed in Python from four inputs: build-req volume, named
      legacy tooling, a self-hosted telemetry stack, and the ratio of build reqs to operate
-     reqs. The model extracts posture and stack per posting; it never sets the score, so a
-     prompt change can move one verdict but cannot silently reshuffle the ranking. Every
-     row carries a verbatim quote and a link to the live posting.</p>
+     reqs. A tool must be named in at least {MIN_MENTIONS} postings to score, so a single
+     engineer's nice-to-have does not read as a company stack; sub-threshold tools are still
+     shown, dimmed, with their count. The model extracts posture and stack per posting; it
+     never sets the score, so a prompt change can move one verdict but cannot silently
+     reshuffle the ranking.</p>
+  <p><strong style="color:var(--ink)">Two different scopes in one row.</strong> The stack
+     columns aggregate across every posting at that account. The quote beneath each row is
+     one specific req. They are not the same source and are labelled accordingly.</p>
   <div class="scroll">
     <table>
       <thead><tr>
         <th>#</th><th>Account</th><th>Tier</th><th>Score</th><th>Build</th>
-        <th>Ops</th><th>Build&nbsp;%</th><th>Legacy stack</th><th>Also detected</th>
+        <th>Ops</th><th>Build&nbsp;%</th>
+        <th>Legacy stack<br><span class="scope">across all postings</span></th>
+        <th>Also detected<br><span class="scope">across all postings</span></th>
       </tr></thead>
       <tbody>
 {"".join(rows_html)}
@@ -383,17 +425,25 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
        written by the prospect, naming the two tools Nominal's own launch post positions
        against.</p>
   </div>
-  <p style="margin-top:1rem">Across the index, LabVIEW appears at 18 accounts, Simulink at
-     19, MATLAB at 25, dSPACE at 5, and TestStand, VeriStand and DIAdem at a handful more.
-     Every one of those is a named displacement conversation with a link to the req that
-     proves it.</p>
+  <p style="margin-top:1rem">Across the ranked index, MATLAB is named at {LEGACY_PREV['MATLAB']}
+     accounts, Simulink at {LEGACY_PREV['Simulink']}, LabVIEW at {LEGACY_PREV['LabVIEW']},
+     dSPACE at {LEGACY_PREV['dSPACE']}, PXI at {LEGACY_PREV['PXI']}, TestStand at
+     {LEGACY_PREV['TestStand']} and DIAdem at {LEGACY_PREV['DIAdem']}. Each is a named
+     displacement conversation with the req that proves it one click away.</p>
 </section>
 
 <section>
   <h2>Suppression, which is the part that has to work</h2>
   <p>Publicly named Nominal customers are removed before ranking. This matters more than it
      looks: the highest-scoring account in the entire dataset was one of them.</p>
+  <p style="margin-top:.4rem"><strong style="color:var(--ink)">Excluded as customers</strong></p>
   <ul class="plain">{sup_html}</ul>
+  <p style="margin-top:1rem"><strong style="color:var(--ink)">Excluded as competitors.</strong>
+     Ranking a competitor as a warm prospect is the same class of error as ranking a
+     customer, and it is the one I missed on the first pass. Applied Intuition would
+     have scored {D['competitors'][0]['score']} on {D['competitors'][0]['builds']} build-posture
+     reqs, placing it in tier A.</p>
+  <ul class="plain">{comp_html}</ul>
   <div class="callout warn" style="margin-top:.9rem">
     <span class="k">Why this check exists</span>
     <p>Varda Space scored 8 out of 8, higher than any account that survived. A naive scan
@@ -404,7 +454,7 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 </section>
 
 <section>
-  <h2>Three ways this data tried to mislead me</h2>
+  <h2>Four ways this data tried to mislead me</h2>
   <p>All three produced confident, wrong output before they were caught. This section
      matters more than the ranking.</p>
 
@@ -443,6 +493,23 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
        across three rows. Display is filtered to a known tool vocabulary and names are
        canonicalised before counting. Both are quiet failures: neither throws, and both
        produce a plausible-looking column.</p>
+  </div>
+
+  <div class="finding">
+    <h3>4. A correct number sitting next to an unrelated link</h3>
+    <p class="was">Relativity Space showed "LabVIEW, MATLAB, Simulink" directly above a link to a req naming none of them.</p>
+    <p class="tight">This one was not a data bug. Every number was right. The layout was
+       wrong. The stack column aggregates across all of an account's postings, while the
+       evidence link points at one specific req, and putting them on adjacent rows with no
+       label implied they shared a source. For Relativity, MATLAB came from {REL.get('MATLAB',0)}
+       postings, LabVIEW from {REL.get('LabVIEW',0)} and Simulink from {REL.get('Simulink',0)},
+       out of {REL_POSTINGS} test-related reqs, while the linked req named no tools at all.
+       Anyone who clicked through and searched for LabVIEW would find nothing and would be
+       right to distrust every other figure on the page. Both scopes are now labelled, and
+       chips carry their mention count so a tool named once cannot pass for one named
+       sixteen times. Scoring now requires a tool to appear in at least
+       {MIN_MENTIONS} postings, or in {int(MIN_RATE*100)}% of that account's test reqs,
+       which reordered the top of the table.</p>
   </div>
 </section>
 

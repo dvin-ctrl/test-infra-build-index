@@ -7,8 +7,8 @@ have. Computed entirely from public job board APIs.
 **[View the rendered index →](https://claude.ai/code/artifact/544a771c-0b4d-4140-a751-428eadcd02cc)**
 
 ```
-51 companies probed  →  32 boards resolved  →  3,497 live postings
-     →  1,029 keyword matches  →  316 build-posture reqs  →  29 accounts ranked
+51 companies probed → 32 boards resolved → 3,544 live postings
+     →  1,050 keyword matches → 324 build-posture reqs → 28 accounts ranked
 Total cost: $0.11.  No paid data. No authentication. Reproducible with curl.
 ```
 

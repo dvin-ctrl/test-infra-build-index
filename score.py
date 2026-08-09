@@ -19,12 +19,21 @@ CL = json.load(open(_cl))
 BOARDS = {b["company"]: b for b in json.load(open(os.path.join(HERE, "data", "boards.json")))}
 POSTINGS = json.load(open(os.path.join(HERE, "data", "postings.json")))
 
-from targets import SUPPRESSED as CUSTOMERS
+from targets import SUPPRESSED as CUSTOMERS, COMPETITORS, COMPETITOR_INCUMBENT
 
 # Legacy stacks Nominal explicitly positions against (Connect launch post names
 # TestStand and LabVIEW by name). A named legacy tool is a displacement signal.
 LEGACY = {"labview", "teststand", "diadem", "veristand", "dspace", "matlab", "simulink", "pxi"}
 DIY = {"influxdb", "grafana", "timescale", "prometheus"}  # rolled-their-own telemetry stack
+
+# A tool named in one req out of eighty-six is one engineer's nice-to-have. The same
+# tool named once at an account with thirteen test reqs is a real signal. So the bar is
+# corroboration OR prevalence: a tool scores if it appears in at least MIN_MENTIONS
+# postings, or in at least MIN_RATE of that account's test-related postings. A flat
+# count alone punished small boards and pushed the single best-evidenced account
+# (one req naming both LabVIEW and TestStand) down eight places.
+MIN_MENTIONS = 2
+MIN_RATE = 0.05
 
 
 def norm(s):
@@ -66,19 +75,29 @@ def main():
             if t and len(t) < 30:
                 p["stack"][canon(t)] += 1
 
-    rows, suppressed = [], []
+    rows, suppressed, competitors = [], [], []
     for co, p in per.items():
         b = BOARDS.get(co, {})
-        stack_norm = {norm(t) for t in p["stack"]}
-        legacy_hits = sorted({t for t in p["stack"] if norm(t) in LEGACY})
-        diy_hits = sorted({t for t in p["stack"] if norm(t) in DIY})
+        # Carry counts, not just presence. Presence alone made a tool named once
+        # render identically to one named sixteen times.
+        legacy_hits = sorted(((t, n) for t, n in p["stack"].items() if norm(t) in LEGACY),
+                             key=lambda x: (-x[1], x[0]))
+        diy_hits = sorted(((t, n) for t, n in p["stack"].items() if norm(t) in DIY),
+                          key=lambda x: (-x[1], x[0]))
+        sig = len(p["builds"]) + len(p["operates"]) or 1
+
+        def scores(n):
+            return n >= MIN_MENTIONS or (n / sig) >= MIN_RATE
+
+        strong_legacy = [t for t, n in legacy_hits if scores(n)]
+        strong_diy = [t for t, n in diy_hits if scores(n)]
 
         # deterministic score, 0-8
         nb = len(p["builds"])
         score = 0
         score += 3 if nb >= 15 else 2 if nb >= 8 else 1 if nb >= 3 else 0   # build volume
-        score += 2 if len(legacy_hits) >= 2 else 1 if legacy_hits else 0     # legacy displacement
-        score += 1 if diy_hits else 0                                        # DIY telemetry stack
+        score += 2 if len(strong_legacy) >= 2 else 1 if strong_legacy else 0  # legacy displacement
+        score += 1 if strong_diy else 0                                      # DIY telemetry stack
         total = len(p["builds"]) + len(p["operates"])
         ratio = nb / total if total else 0
         score += 2 if ratio >= 0.6 else 1 if ratio >= 0.4 else 0             # build-heavy posture
@@ -95,18 +114,26 @@ def main():
             "operates": len(p["operates"]),
             "discarded_by_llm": p["neither"],
             "build_ratio": round(ratio, 2),
-            "legacy": legacy_hits,
-            "diy": diy_hits,
-            "stack_top": [t for t, _ in p["stack"].most_common(6)],
+            "legacy": [[t, n] for t, n in legacy_hits],
+            "legacy_scoring": strong_legacy,
+            "diy": [[t, n] for t, n in diy_hits],
+            "stack_top": [[t, n] for t, n in p["stack"].most_common(8)],
             "score": score,
             "tier": tier,
             "evidence": (best[0].get("evidence") or "")[:230] if best else "",
             "evidence_title": best[0]["title"] if best else "",
             "evidence_url": best[0]["url"] if best else "",
         }
+        if co in COMPETITOR_INCUMBENT:
+            row["incumbent_note"] = COMPETITOR_INCUMBENT[co]
         if co in CUSTOMERS:
-            row["suppressed_reason"] = CUSTOMERS[co]
+            row["excluded_reason"] = CUSTOMERS[co]
+            row["excluded_kind"] = "customer"
             suppressed.append(row)
+        elif co in COMPETITORS:
+            row["excluded_reason"] = COMPETITORS[co]
+            row["excluded_kind"] = "competitor"
+            competitors.append(row)
         else:
             rows.append(row)
 
@@ -126,17 +153,21 @@ def main():
         "operates_total": sum(1 for v in CL.values() if v["posture"] == "operates_tests"),
         "rows": rows,
         "suppressed": suppressed,
+        "competitors": competitors,
+        "min_mentions": MIN_MENTIONS,
+        "min_rate": MIN_RATE,
     }
     json.dump(out, open(os.path.join(HERE, "data", "index.json"), "w"), indent=1)
 
     print(f"scanned {out['companies_scanned']} companies / {out['boards_resolved']} boards resolved")
     print(f"{out['total_postings']} postings -> {out['keyword_matched']} keyword -> "
           f"{out['builds_total']} build-posture ({out['llm_discarded']} discarded by LLM)")
-    print(f"\nSUPPRESSED (existing customers): {[r['company'] for r in suppressed]}\n")
+    print(f"\nEXCLUDED as customers:   {[r['company'] for r in suppressed]}")
+    print(f"EXCLUDED as competitors: {[r['company'] for r in competitors]}\n")
     print(f"{'#':>2} {'company':<22} {'seg':<22} {'T':<2} {'sc':>2} {'bld':>4} {'ops':>4} {'legacy'}")
     for i, r in enumerate(rows[:24], 1):
         print(f"{i:>2} {r['company']:<22} {r['segment']:<22} {r['tier']:<2} {r['score']:>2} "
-              f"{r['builds']:>4} {r['operates']:>4} {', '.join(r['legacy'][:3])}")
+              f"{r['builds']:>4} {r['operates']:>4} {', '.join(f'{t}x{n}' for t, n in r['legacy'][:3])}")
 
 
 if __name__ == "__main__":

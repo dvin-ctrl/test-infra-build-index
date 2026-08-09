@@ -103,6 +103,28 @@ CAREERS = {
     "Hadrian":             ["https://www.hadrian.co/careers"],
 }
 
+# Competitors. Ranking one of these as a prospect is the same class of error as
+# ranking a customer, and arguably worse: a rep who opens a $15B competitor as a
+# warm account loses credibility they do not get back. Held separately from
+# customers so the page can state which kind of exclusion applied and why.
+COMPETITORS = {
+    "Applied Intuition": "indirect competitor, pre-physical simulation (Contrary Research)",
+    "Sift":              "direct competitor, mission-critical hardware test (Contrary Research)",
+    "Revel":             "direct competitor, test deployment (Contrary Research)",
+    "SimScale":          "adjacent, pre-physical CFD/FEA simulation (Contrary Research)",
+    "dSPACE":            "direct competitor to Nominal Connect (Contrary Research)",
+    "National Instruments": "legacy incumbent, LabVIEW/TestStand (Contrary Research)",
+    "Keysight":          "legacy incumbent (Contrary Research)",
+    "Siemens":           "legacy incumbent, PLM/MES/Simcenter (Contrary Research)",
+    "Emerson":           "legacy incumbent, owns National Instruments (Contrary Research)",
+}
+
+# Accounts already served by a competitor. Still valid targets, but a displacement
+# conversation rather than a greenfield one, so they are tagged not removed.
+COMPETITOR_INCUMBENT = {
+    "Impulse Space": "Revel's first named customer (Contrary Research)",
+}
+
 # Removed before ranking. Pitching a current customer is the fastest way for an
 # internal GTM system to lose the sales team's trust.
 SUPPRESSED = {

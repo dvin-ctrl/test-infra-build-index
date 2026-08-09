@@ -1,386 +1,135 @@
 [
  {
-  "company": "Astranis",
-  "segment": "Space / Satellites",
-  "provider": "greenhouse",
-  "slug": "astranis",
-  "url": "https://boards-api.greenhouse.io/v1/boards/astranis/jobs?content=true",
-  "job_count": 89
- },
- {
-  "company": "Ursa Major",
-  "segment": "Space / Propulsion",
-  "provider": "greenhouse",
-  "slug": "ursamajor",
-  "url": "https://boards-api.greenhouse.io/v1/boards/ursamajor/jobs?content=true",
-  "job_count": 79
- },
- {
-  "company": "Rocket Lab",
-  "segment": "Space / Launch",
-  "provider": "greenhouse",
-  "slug": "rocketlab",
-  "url": "https://boards-api.greenhouse.io/v1/boards/rocketlab/jobs?content=true",
-  "job_count": 397
- },
- {
   "company": "Impulse Space",
   "segment": "Space / Propulsion",
   "provider": "ashby",
   "slug": "impulse",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/impulse?includeCompensation=true",
   "job_count": 3
- },
- {
-  "company": "Venus Aerospace",
-  "segment": "Hypersonics",
-  "provider": "lever",
-  "slug": "venusaero",
-  "url": "https://api.lever.co/v0/postings/venusaero?mode=json",
-  "job_count": 21
- },
- {
-  "company": "Varda Space",
-  "segment": "Space / Manufacturing",
-  "provider": "greenhouse",
-  "slug": "vardaspace",
-  "url": "https://boards-api.greenhouse.io/v1/boards/vardaspace/jobs?content=true",
-  "job_count": 85
- },
- {
-  "company": "Saronic",
-  "segment": "Maritime Autonomy",
-  "provider": "ashby",
-  "slug": "saronic",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/saronic?includeCompensation=true",
-  "job_count": 252
- },
- {
-  "company": "Relativity Space",
-  "segment": "Space / Launch",
-  "provider": "greenhouse",
-  "slug": "relativity",
-  "url": "https://boards-api.greenhouse.io/v1/boards/relativity/jobs?content=true",
-  "job_count": 360
- },
- {
-  "company": "True Anomaly",
-  "segment": "Space / Defense",
-  "provider": "greenhouse",
-  "slug": "trueanomalyinc",
-  "url": "https://boards-api.greenhouse.io/v1/boards/trueanomalyinc/jobs?content=true",
-  "job_count": 166
- },
- {
-  "company": "Epirus",
-  "segment": "Defense / Directed E.",
-  "provider": "greenhouse",
-  "slug": "epirus",
-  "url": "https://boards-api.greenhouse.io/v1/boards/epirus/jobs?content=true",
-  "job_count": 34
- },
- {
-  "company": "K2 Space",
-  "segment": "Space / Satellites",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Castelion",
-  "segment": "Defense / Munitions",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Skydio",
-  "segment": "Drones / Autonomy",
-  "provider": "ashby",
-  "slug": "skydio",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/skydio?includeCompensation=true",
-  "job_count": 115
- },
- {
-  "company": "Firefly Aerospace",
-  "segment": "Space / Launch",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
  },
  {
   "company": "Apex",
   "segment": "Space / Satellites",
   "provider": "ashby",
   "slug": "apex-technology-inc",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/apex-technology-inc?includeCompensation=true",
-  "job_count": 83
+  "job_count": 82
  },
  {
-  "company": "HavocAI",
-  "segment": "Maritime Autonomy",
-  "provider": "ashby",
-  "slug": "havocai",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/havocai?includeCompensation=true",
-  "job_count": 22
+  "company": "Astranis",
+  "segment": "Space / Satellites",
+  "provider": "greenhouse",
+  "slug": "astranis",
+  "job_count": 88
  },
  {
-  "company": "Stoke Space",
+  "company": "Ursa Major",
+  "segment": "Space / Propulsion",
+  "provider": "greenhouse",
+  "slug": "ursamajor",
+  "job_count": 78
+ },
+ {
+  "company": "Relativity Space",
   "segment": "Space / Launch",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Neros Technologies",
-  "segment": "Defense / Drones",
   "provider": "greenhouse",
-  "slug": "nerostechnologies",
-  "url": "https://boards-api.greenhouse.io/v1/boards/nerostechnologies/jobs?content=true",
-  "job_count": 62
+  "slug": "relativity",
+  "job_count": 364
  },
  {
-  "company": "Mach Industries",
-  "segment": "Defense / Munitions",
-  "provider": "ashby",
-  "slug": "mach",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/mach?includeCompensation=true",
-  "job_count": 96
+  "company": "Venus Aerospace",
+  "segment": "Hypersonics",
+  "provider": "lever",
+  "slug": "venusaero",
+  "job_count": 21
  },
  {
-  "company": "Archer Aviation",
-  "segment": "eVTOL / Aviation",
+  "company": "Rocket Lab",
+  "segment": "Space / Launch",
   "provider": "greenhouse",
-  "slug": "archer",
-  "url": "https://boards-api.greenhouse.io/v1/boards/archer/jobs?content=true",
-  "job_count": 1
+  "slug": "rocketlab",
+  "job_count": 403
  },
  {
-  "company": "Overland AI",
-  "segment": "Ground Autonomy",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
+  "company": "Varda Space",
+  "segment": "Space / Manufacturing",
+  "provider": "greenhouse",
+  "slug": "vardaspace",
+  "job_count": 101
  },
  {
-  "company": "Forterra",
-  "segment": "Ground Autonomy",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
+  "company": "True Anomaly",
+  "segment": "Space / Defense",
+  "provider": "greenhouse",
+  "slug": "trueanomalyinc",
+  "job_count": 165
  },
  {
-  "company": "Blue Water Autonomy",
+  "company": "Saronic",
   "segment": "Maritime Autonomy",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Electra",
-  "segment": "Aviation",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Oklo",
-  "segment": "Nuclear",
-  "provider": "greenhouse",
-  "slug": "oklo",
-  "url": "https://boards-api.greenhouse.io/v1/boards/oklo/jobs?content=true",
-  "job_count": 64
- },
- {
-  "company": "Wisk Aero",
-  "segment": "eVTOL / Aviation",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Radiant Nuclear",
-  "segment": "Nuclear",
   "provider": "ashby",
-  "slug": "radiant",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/radiant?includeCompensation=true",
-  "job_count": 29
- },
- {
-  "company": "Kairos Power",
-  "segment": "Nuclear",
-  "provider": "greenhouse",
-  "slug": "kairospower",
-  "url": "https://boards-api.greenhouse.io/v1/boards/kairospower/jobs?content=true",
-  "job_count": 24
- },
- {
-  "company": "Applied Intuition",
-  "segment": "Autonomy Software",
-  "provider": "ashby",
-  "slug": "applied",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/applied?includeCompensation=true",
-  "job_count": 261
- },
- {
-  "company": "Helion Energy",
-  "segment": "Fusion",
-  "provider": "ashby",
-  "slug": "helion",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/helion?includeCompensation=true",
-  "job_count": 109
- },
- {
-  "company": "Joby Aviation",
-  "segment": "eVTOL / Aviation",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Beta Technologies",
-  "segment": "eVTOL / Aviation",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Agility Robotics",
-  "segment": "Humanoid Robotics",
-  "provider": "greenhouse",
-  "slug": "agilityrobotics",
-  "url": "https://boards-api.greenhouse.io/v1/boards/agilityrobotics/jobs?content=true",
-  "job_count": 57
- },
- {
-  "company": "Figure AI",
-  "segment": "Humanoid Robotics",
-  "provider": "greenhouse",
-  "slug": "figureai",
-  "url": "https://boards-api.greenhouse.io/v1/boards/figureai/jobs?content=true",
-  "job_count": 126
- },
- {
-  "company": "Apptronik",
-  "segment": "Humanoid Robotics",
-  "provider": "greenhouse",
-  "slug": "apptronik",
-  "url": "https://boards-api.greenhouse.io/v1/boards/apptronik/jobs?content=true",
-  "job_count": 83
- },
- {
-  "company": "X-energy",
-  "segment": "Nuclear",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Zap Energy",
-  "segment": "Fusion",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Type One Energy",
-  "segment": "Fusion",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "TAE Technologies",
-  "segment": "Fusion",
-  "provider": null,
-  "slug": null,
-  "url": null,
-  "job_count": 0
- },
- {
-  "company": "Kodiak Robotics",
-  "segment": "Autonomous Trucking",
-  "provider": "greenhouse",
-  "slug": "kodiak",
-  "url": "https://boards-api.greenhouse.io/v1/boards/kodiak/jobs?content=true",
-  "job_count": 67
- },
- {
-  "company": "Nuro",
-  "segment": "Autonomous Vehicles",
-  "provider": "greenhouse",
-  "slug": "nuro",
-  "url": "https://boards-api.greenhouse.io/v1/boards/nuro/jobs?content=true",
-  "job_count": 102
- },
- {
-  "company": "Zoox",
-  "segment": "Autonomous Vehicles",
-  "provider": "lever",
-  "slug": "zoox",
-  "url": "https://api.lever.co/v0/postings/zoox?mode=json",
-  "job_count": 239
- },
- {
-  "company": "Commonwealth Fusion",
-  "segment": "Fusion",
-  "provider": "lever",
-  "slug": "cfsenergy",
-  "url": "https://api.lever.co/v0/postings/cfsenergy?mode=json",
-  "job_count": 58
+  "slug": "saronic",
+  "job_count": 251
  },
  {
   "company": "Vast Space",
   "segment": "Space Stations",
   "provider": "greenhouse",
   "slug": "vast",
-  "url": "https://boards-api.greenhouse.io/v1/boards/vast/jobs?content=true",
-  "job_count": 165
+  "job_count": 166
  },
  {
-  "company": "Boston Dynamics",
-  "segment": "Robotics",
+  "company": "Mach Industries",
+  "segment": "Defense / Munitions",
+  "provider": "ashby",
+  "slug": "mach",
+  "job_count": 99
+ },
+ {
+  "company": "Epirus",
+  "segment": "Defense / Directed E.",
+  "provider": "greenhouse",
+  "slug": "epirus",
+  "job_count": 35
+ },
+ {
+  "company": "Skydio",
+  "segment": "Drones / Autonomy",
+  "provider": "ashby",
+  "slug": "skydio",
+  "job_count": 114
+ },
+ {
+  "company": "Neros Technologies",
+  "segment": "Defense / Drones",
+  "provider": "greenhouse",
+  "slug": "nerostechnologies",
+  "job_count": 64
+ },
+ {
+  "company": "Firefly Aerospace",
+  "segment": "Space / Launch",
   "provider": null,
   "slug": null,
-  "url": null,
   "job_count": 0
  },
  {
-  "company": "Divergent",
-  "segment": "Advanced Mfg",
-  "provider": "greenhouse",
-  "slug": "divergent",
-  "url": "https://boards-api.greenhouse.io/v1/boards/divergent/jobs?content=true",
-  "job_count": 58
+  "company": "Applied Intuition",
+  "segment": "Autonomy Software",
+  "provider": "ashby",
+  "slug": "applied",
+  "job_count": 262
  },
  {
-  "company": "Torc Robotics",
-  "segment": "Autonomous Trucking",
-  "provider": "greenhouse",
-  "slug": "torcrobotics",
-  "url": "https://boards-api.greenhouse.io/v1/boards/torcrobotics/jobs?content=true",
-  "job_count": 56
+  "company": "HavocAI",
+  "segment": "Maritime Autonomy",
+  "provider": "ashby",
+  "slug": "havocai",
+  "job_count": 22
  },
  {
-  "company": "Gatik",
-  "segment": "Autonomous Trucking",
+  "company": "K2 Space",
+  "segment": "Space / Satellites",
   "provider": null,
   "slug": null,
-  "url": null,
   "job_count": 0
  },
  {
@@ -388,15 +137,139 @@
   "segment": "Space / Defense",
   "provider": null,
   "slug": null,
-  "url": null,
   "job_count": 0
  },
  {
-  "company": "Plus",
-  "segment": "Autonomous Trucking",
+  "company": "Archer Aviation",
+  "segment": "eVTOL / Aviation",
+  "provider": "greenhouse",
+  "slug": "archer",
+  "job_count": 1
+ },
+ {
+  "company": "Castelion",
+  "segment": "Defense / Munitions",
   "provider": null,
   "slug": null,
-  "url": null,
+  "job_count": 0
+ },
+ {
+  "company": "Stoke Space",
+  "segment": "Space / Launch",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Overland AI",
+  "segment": "Ground Autonomy",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Radiant Nuclear",
+  "segment": "Nuclear",
+  "provider": "ashby",
+  "slug": "radiant",
+  "job_count": 29
+ },
+ {
+  "company": "Forterra",
+  "segment": "Ground Autonomy",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Oklo",
+  "segment": "Nuclear",
+  "provider": "greenhouse",
+  "slug": "oklo",
+  "job_count": 64
+ },
+ {
+  "company": "Kairos Power",
+  "segment": "Nuclear",
+  "provider": "greenhouse",
+  "slug": "kairospower",
+  "job_count": 24
+ },
+ {
+  "company": "Helion Energy",
+  "segment": "Fusion",
+  "provider": "ashby",
+  "slug": "helion",
+  "job_count": 108
+ },
+ {
+  "company": "Wisk Aero",
+  "segment": "eVTOL / Aviation",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Beta Technologies",
+  "segment": "eVTOL / Aviation",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Commonwealth Fusion",
+  "segment": "Fusion",
+  "provider": "lever",
+  "slug": "cfsenergy",
+  "job_count": 61
+ },
+ {
+  "company": "Joby Aviation",
+  "segment": "eVTOL / Aviation",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Blue Water Autonomy",
+  "segment": "Maritime Autonomy",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Figure AI",
+  "segment": "Humanoid Robotics",
+  "provider": "greenhouse",
+  "slug": "figureai",
+  "job_count": 127
+ },
+ {
+  "company": "Agility Robotics",
+  "segment": "Humanoid Robotics",
+  "provider": "greenhouse",
+  "slug": "agilityrobotics",
+  "job_count": 60
+ },
+ {
+  "company": "Zap Energy",
+  "segment": "Fusion",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Apptronik",
+  "segment": "Humanoid Robotics",
+  "provider": "greenhouse",
+  "slug": "apptronik",
+  "job_count": 82
+ },
+ {
+  "company": "X-energy",
+  "segment": "Nuclear",
+  "provider": null,
+  "slug": null,
   "job_count": 0
  },
  {
@@ -404,7 +277,83 @@
   "segment": "Precision Mfg",
   "provider": "ashby",
   "slug": "hadrian-automation",
-  "url": "https://api.ashbyhq.com/posting-api/job-board/hadrian-automation?includeCompensation=true",
   "job_count": 134
+ },
+ {
+  "company": "Divergent",
+  "segment": "Advanced Mfg",
+  "provider": "greenhouse",
+  "slug": "divergent",
+  "job_count": 64
+ },
+ {
+  "company": "Electra",
+  "segment": "Aviation",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Nuro",
+  "segment": "Autonomous Vehicles",
+  "provider": "greenhouse",
+  "slug": "nuro",
+  "job_count": 104
+ },
+ {
+  "company": "Kodiak Robotics",
+  "segment": "Autonomous Trucking",
+  "provider": "greenhouse",
+  "slug": "kodiak",
+  "job_count": 68
+ },
+ {
+  "company": "Torc Robotics",
+  "segment": "Autonomous Trucking",
+  "provider": "greenhouse",
+  "slug": "torcrobotics",
+  "job_count": 60
+ },
+ {
+  "company": "Zoox",
+  "segment": "Autonomous Vehicles",
+  "provider": "lever",
+  "slug": "zoox",
+  "job_count": 240
+ },
+ {
+  "company": "TAE Technologies",
+  "segment": "Fusion",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Type One Energy",
+  "segment": "Fusion",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Plus",
+  "segment": "Autonomous Trucking",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Boston Dynamics",
+  "segment": "Robotics",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
+ },
+ {
+  "company": "Gatik",
+  "segment": "Autonomous Trucking",
+  "provider": null,
+  "slug": null,
+  "job_count": 0
  }
 ]
