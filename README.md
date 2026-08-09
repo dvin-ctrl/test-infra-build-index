@@ -34,7 +34,7 @@ signal. "Test Engineer who will architect our data acquisition pipeline" is.
 |---|---|---|---|
 | 1 | `scan.py` | Resolve each target's job board, pull every posting, keyword-filter | $0 |
 | 2 | `classify.py` | Per posting: build vs operate posture, named stack, verbatim evidence | $0.11 |
-| 3 | `score.py` | Suppress customers, score deterministically, rank | $0 |
+| 3 | `score.py` | Exclude customers and competitors, score deterministically, rank | $0 |
 | 4 | `render.py` | Emit the standalone page | $0 |
 
 Job boards are read from the public Ashby, Greenhouse and Lever endpoints. Where slug
@@ -46,26 +46,32 @@ computes the account score from four inputs (build-req volume, named legacy tool
 self-hosted telemetry stack, and build-to-operate ratio). A prompt change can move one
 verdict but cannot silently reshuffle the ranking.
 
+**Tools score on prevalence, not presence.** A tool counts toward the score only if it is
+named in at least 2 postings, or in at least 5% of that account's test-related reqs. A
+tool named once out of 63 reqs is one engineer's nice-to-have; the same tool named once
+at an account with 13 test reqs is a real signal. Sub-threshold tools are still shown,
+dimmed, with their count.
+
 **Cost control.** Classification sends keyword-centered excerpts, not whole reqs. A
 posting averages ~9.4k characters and the tool names cluster in two or three places.
 Excerpting cut input tokens from 2.42M to 582K, a 76% reduction, and improved precision
 by removing benefits boilerplate and EEO statements the model would otherwise weigh.
 
-## Three ways this data tried to mislead me
+## Four ways this data tried to mislead me
 
-This is the part worth reading. All three produced confident, wrong output before they
+This is the part worth reading. All four produced confident, wrong output before they
 were caught.
 
 ### 1. Naive matching called 98% of the market a lead
 
-Substring matching flagged **3,427 of 3,497 postings**. Ninety-eight percent is not a
+Substring matching flagged **3,477 of 3,544 postings**. Ninety-eight percent is not a
 signal, it is a broken filter, and its absurdity is the only reason it got caught.
 
 The cause is acronyms. `HIL` matches inside "while" and "child", so a Workplace
 Assistant req scored as a hardware-in-the-loop lead. Acronyms are now matched
 case-sensitively with word boundaries, phrases case-insensitively with word boundaries.
-That cut 2,398 false positives, **70% of all naive hits**. The classifier then discarded
-a further 403 where the tool names were genuinely incidental.
+That cut 2,427 false positives, **70% of all naive hits**. The classifier then discarded
+a further 412 where the tool names were genuinely incidental.
 
 ### 2. One job board silently returned a third of each posting
 
@@ -97,13 +103,39 @@ Display is filtered to a known tool vocabulary and names are canonicalized befor
 counting. Both failures are quiet: neither throws, and both produce a plausible-looking
 column.
 
-## Suppression
+### 4. A correct number sitting next to an unrelated link
 
-Publicly named customers are removed before ranking, each with a citation for where the
-relationship was disclosed (see `targets.py`). This matters more than it looks: **the
-highest-scoring account in the dataset, at 8 out of 8, was an existing customer.** A
-naive scan would have handed a rep a confident, well-evidenced cold brief for a company
-the vendor already bills.
+This one was not a data bug. Every number was right and the layout was wrong, which is
+worse, because nothing in the output looked suspicious.
+
+Relativity Space displayed `LabVIEW, MATLAB, Simulink` directly above a link to a req
+that named none of them. The stack column aggregates across all of an account's postings;
+the evidence link points at one specific req. Putting them on adjacent rows with no label
+implied they shared a source. For Relativity, MATLAB came from 16 postings, LabVIEW from
+2 and Simulink from 1, out of 63 test-related reqs, while the linked req named no tools
+at all.
+
+Anyone who clicked through and searched for LabVIEW would find nothing, and would then be
+right to distrust every other figure on the page. Both scopes are now labelled, chips
+carry their mention count, and scoring requires prevalence. It was caught by a reader
+asking where a number came from, which is the only reason it is documented here.
+
+## Exclusions
+
+Two kinds, held separately, each entry citing where the relationship was disclosed (see
+`targets.py`).
+
+**Customers.** Removed before ranking. This matters more than it looks: the
+highest-scoring account in the first run, at 8 out of 8, was an existing customer. A naive
+scan would have handed a rep a confident, well-evidenced cold brief for a company the
+vendor already bills.
+
+**Competitors.** Also removed, and this is the one I missed on the first pass. Applied
+Intuition ranked 8th before being caught. Ranking a $15B competitor as a warm prospect is
+the same class of error as ranking a customer.
+
+Accounts already served by a competitor are **tagged rather than removed**, since that is
+a displacement conversation rather than a greenfield one.
 
 ## Coverage this does not have
 
