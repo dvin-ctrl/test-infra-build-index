@@ -203,6 +203,22 @@ ul.plain .why {{ display:block; font-family:var(--mono); font-size:.65rem;
 code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   border:1px solid var(--line); padding:.06em .32em; }}
 .tags {{ font-family:var(--mono); font-size:.72rem; color:var(--dim); line-height:2; }}
+.specs {{ display:flex; flex-direction:column; gap:1.15rem; margin-top:.4rem; }}
+.spec .lbl {{ font-family:var(--mono); font-size:.62rem; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--signal); display:block; margin-bottom:.45rem; }}
+.srow {{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1.15fr) auto;
+  gap:.35rem 1.1rem; align-items:baseline; background:var(--panel);
+  border:1px solid var(--line); padding:.62rem .85rem; margin-bottom:.35rem; }}
+@media (max-width:58rem) {{ .srow {{ grid-template-columns:1fr; }} }}
+.srow code {{ font-size:.7rem; overflow-wrap:anywhere; background:none; border:0;
+  padding:0; color:var(--ink); }}
+.srow .what {{ font-size:.82rem; color:var(--soft); }}
+.srow .cost {{ font-family:var(--mono); font-size:.62rem; white-space:nowrap;
+  padding:.15rem .45rem; justify-self:start; }}
+.cost.free {{ background:var(--cool-bg); color:var(--cool); }}
+.cost.paid {{ background:var(--warm-bg); color:var(--warm); }}
+.notused {{ background:var(--panel); border:1px dashed var(--line2); padding:.7rem .9rem;
+  font-size:.83rem; color:var(--soft); margin-top:.2rem; }}
 </style>
 
 <div class="wrap">
@@ -237,6 +253,78 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
     <div class="tile"><span class="k">Cost to run</span><span class="v">$0.11</span>
       <span class="s">one gpt-4o-mini pass</span></div>
   </div>
+</section>
+
+<section>
+  <h2>Tech stack</h2>
+  <p>Every input is a public endpoint. There is no paid data vendor, no scraping
+     service, no proxy, and no headless browser anywhere in this pipeline, which is why
+     anyone at Nominal can reproduce the whole dataset from a laptop.</p>
+
+  <div class="specs">
+    <div class="spec">
+      <span class="lbl">Ingest &middot; job boards</span>
+      <div class="srow">
+        <code>GET api.ashbyhq.com/posting-api/job-board/{{slug}}</code>
+        <span class="what">Ashby public board. Full description text per posting.</span>
+        <span class="cost free">free, no auth</span>
+      </div>
+      <div class="srow">
+        <code>GET boards-api.greenhouse.io/v1/boards/{{slug}}/jobs?content=true</code>
+        <span class="what">Greenhouse public board. <code>content=true</code> is what returns
+          the description body rather than titles alone.</span>
+        <span class="cost free">free, no auth</span>
+      </div>
+      <div class="srow">
+        <code>GET api.lever.co/v0/postings/{{slug}}?mode=json</code>
+        <span class="what">Lever public board. Text is split across
+          <code>descriptionPlain</code>, <code>lists[]</code> and <code>additionalPlain</code>;
+          all three are concatenated. Reading only the first captures 32%.</span>
+        <span class="cost free">free, no auth</span>
+      </div>
+      <div class="srow">
+        <code>GET &lt;company&gt;/careers</code>
+        <span class="what">Plain HTTP fetch, regexed for a board token when slug guessing
+          fails. Recovered 5 boards including Applied Intuition and Commonwealth Fusion.</span>
+        <span class="cost free">free</span>
+      </div>
+    </div>
+
+    <div class="spec">
+      <span class="lbl">Synthesis</span>
+      <div class="srow">
+        <code>POST api.openai.com/v1/chat/completions</code>
+        <span class="what">gpt-4o-mini at temperature 0, structured output via
+          <code>json_schema</code> with <code>strict:true</code>. Returns build-versus-operate
+          posture, named stack, and a verbatim evidence quote. 1,029 calls.</span>
+        <span class="cost paid">$0.109</span>
+      </div>
+      <div class="srow">
+        <code>python3 &middot; requests &middot; ThreadPoolExecutor</code>
+        <span class="what">Orchestration at 8 to 10 concurrent workers. Every stage caches to
+          disk and resumes, so an interrupted run never re-bills.</span>
+        <span class="cost free">free</span>
+      </div>
+      <div class="srow">
+        <code>re &middot; word-boundary matching</code>
+        <span class="what">Pre-filter cutting 3,497 postings to 1,029 before any model call.
+          Acronyms case-sensitive, phrases case-insensitive. This is what keeps
+          classification under a dime.</span>
+        <span class="cost free">free</span>
+      </div>
+      <div class="srow">
+        <code>deterministic scoring (score.py)</code>
+        <span class="what">The 0 to 8 account score, computed in Python from four inputs.
+          No model involvement in the ranking.</span>
+        <span class="cost free">free</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="notused"><strong>Deliberately not used:</strong> no LinkedIn, no paid enrichment
+     or contact vendor, no scraping service or proxy pool, no headless browser, no CRM
+     export. If a number on this page cannot be traced to a public endpoint, it is not on
+     this page.</p>
 </section>
 
 <section>
