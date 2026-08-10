@@ -278,6 +278,63 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 </section>
 
 <section>
+  <h2>Method and tech stack</h2>
+  <p>No model runs in this layer: award facts are filed, posture was already classified on
+     the companion pipeline, and the brief is string assembly. Quotes are substrings of the
+     federal record, so verification is a text search on the linked page.</p>
+  <div class="specs">
+    <div class="spec">
+      <span class="lbl">Ingest</span>
+      <div class="srow">
+        <code>POST api.usaspending.gov/api/v2/search/spending_by_award</code>
+        <span class="what">Federal contracts per target since 2024: amount, agency, dates,
+          description, and the award record URL. Every recipient validated by name-token
+          overlap; 122 wrong-company hits rejected and logged.</span>
+        <span class="cost">free, no auth</span>
+      </div>
+      <div class="srow">
+        <code>Ashby / Greenhouse / Lever public job boards</code>
+        <span class="what">The hiring-posture half of the join, inherited from the
+          companion pipeline: 3,544 postings classified build-versus-operate.</span>
+        <span class="cost">free, no auth</span>
+      </div>
+    </div>
+    <div class="spec">
+      <span class="lbl">Synthesis</span>
+      <div class="srow">
+        <code>python3 &middot; deterministic join</code>
+        <span class="what">Awards x build posture joined and ranked in plain Python. The
+          per-account brief is assembled from filed fields by string concatenation, so it
+          structurally cannot claim anything its linked sources do not.</span>
+        <span class="cost">free, no LLM</span>
+      </div>
+      <div class="srow">
+        <code>gpt-4o-mini (upstream, companion pipeline)</code>
+        <span class="what">The only model in the whole system, used once upstream to
+          classify req posture. Total cost across both pages: $0.26.</span>
+        <span class="cost">$0 this layer</span>
+      </div>
+    </div>
+    <div class="spec">
+      <span class="lbl">Orchestration</span>
+      <div class="srow">
+        <code>Claude Code (Anthropic)</code>
+        <span class="what">Agentic build environment. Authored, ran, and audited every
+          stage, including the five-account pilot that caught this layer's three defects
+          before publication.</span>
+        <span class="cost">dev environment</span>
+      </div>
+      <div class="srow">
+        <code>git &middot; GitHub</code>
+        <span class="what">Scanner, classifier, join, and both renderers are published in
+          one repository; every methodology change is a commit with its reasoning.</span>
+        <span class="cost">free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   <h2>Why the join</h2>
   <p>A federal award proves a funded program with dates and dollars, but startup award
      descriptions are mission names, not activity language: only 2 of {sum(len(v) for v in AW['companies'].values())}
@@ -355,62 +412,6 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   <ul class="plain">{buildonly_html}</ul>
 </section>
 
-<section>
-  <h2>Method and tech stack</h2>
-  <p>No model runs in this layer: award facts are filed, posture was already classified on
-     the companion pipeline, and the brief is string assembly. Quotes are substrings of the
-     federal record, so verification is a text search on the linked page.</p>
-  <div class="specs">
-    <div class="spec">
-      <span class="lbl">Ingest</span>
-      <div class="srow">
-        <code>POST api.usaspending.gov/api/v2/search/spending_by_award</code>
-        <span class="what">Federal contracts per target since 2024: amount, agency, dates,
-          description, and the award record URL. Every recipient validated by name-token
-          overlap; 122 wrong-company hits rejected and logged.</span>
-        <span class="cost">free, no auth</span>
-      </div>
-      <div class="srow">
-        <code>Ashby / Greenhouse / Lever public job boards</code>
-        <span class="what">The hiring-posture half of the join, inherited from the
-          companion pipeline: 3,544 postings classified build-versus-operate.</span>
-        <span class="cost">free, no auth</span>
-      </div>
-    </div>
-    <div class="spec">
-      <span class="lbl">Synthesis</span>
-      <div class="srow">
-        <code>python3 &middot; deterministic join</code>
-        <span class="what">Awards x build posture joined and ranked in plain Python. The
-          per-account brief is assembled from filed fields by string concatenation, so it
-          structurally cannot claim anything its linked sources do not.</span>
-        <span class="cost">free, no LLM</span>
-      </div>
-      <div class="srow">
-        <code>gpt-4o-mini (upstream, companion pipeline)</code>
-        <span class="what">The only model in the whole system, used once upstream to
-          classify req posture. Total cost across both pages: $0.26.</span>
-        <span class="cost">$0 this layer</span>
-      </div>
-    </div>
-    <div class="spec">
-      <span class="lbl">Orchestration</span>
-      <div class="srow">
-        <code>Claude Code (Anthropic)</code>
-        <span class="what">Agentic build environment. Authored, ran, and audited every
-          stage, including the five-account pilot that caught this layer's three defects
-          before publication.</span>
-        <span class="cost">dev environment</span>
-      </div>
-      <div class="srow">
-        <code>git &middot; GitHub</code>
-        <span class="what">Scanner, classifier, join, and both renderers are published in
-          one repository; every methodology change is a commit with its reasoning.</span>
-        <span class="cost">free</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <footer style="border-top:1px solid var(--line);padding-top:1.2rem">
   <p class="src" style="margin:0">Built by Dvin Malekian &middot; awards fetched 9 August 2026 &middot;
