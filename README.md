@@ -5,6 +5,9 @@ test infrastructure in-house, rather than to **operate** tests with tooling they
 have. Computed entirely from public job board APIs.
 
 **[View the rendered index →](https://claude.ai/code/artifact/544a771c-0b4d-4140-a751-428eadcd02cc)**
+**[Companion: Test Campaign Radar →](https://claude.ai/code/artifact/319632e9-7592-44e4-b2e2-57e0d4b8ae69)** — the same
+companies joined against validated federal awards (USAspending), so each account carries
+a funded program and the reqs staffing it, both linked to their filed sources.
 
 ```
 51 companies probed → 32 boards resolved → 3,544 live postings
@@ -36,6 +39,8 @@ signal. "Test Engineer who will architect our data acquisition pipeline" is.
 | 2 | `classify.py` | Per posting: build vs operate posture, named stack, verbatim evidence | $0.11 |
 | 3 | `score.py` | Exclude customers and competitors, score deterministically, rank | $0 |
 | 4 | `render.py` | Emit the standalone page | $0 |
+| 5 | `awards.py` | USAspending awards per target, recipient-validated | $0 |
+| 6 | `render_radar.py` | Join awards x build posture, emit the Radar page | $0 |
 
 Job boards are read from the public Ashby, Greenhouse and Lever endpoints. Where slug
 guessing fails, `scan.py` reads the company's careers page and regexes out the real

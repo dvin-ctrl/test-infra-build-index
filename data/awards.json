@@ -1,0 +1,1319 @@
+{
+ "fetched": "2026-08-09",
+ "companies": {
+  "Stoke Space": [
+   {
+    "award_id": "FA881125FB006",
+    "recipient": "STOKE SPACE TECHNOLOGIES, INC.",
+    "amount": 5000000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-03-28",
+    "end": "2026-03-28",
+    "test_language": null,
+    "quote": "NATIONAL SECURITY SPACE LAUNCH (NSSL) PHASE 3 LANE 1 LAUNCH SERVICES PROCUREMENT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA881125FB006_9700_FA881125DB006_9700"
+   },
+   {
+    "award_id": "FA881825FB006",
+    "recipient": "STOKE SPACE TECHNOLOGIES, INC.",
+    "amount": 482064.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-03-14",
+    "end": "2026-07-02",
+    "test_language": null,
+    "quote": "STOKE SPACE OSP-4 QUINTESSENTIAL STUDIES TASK ORDER NORTH AMERICAN INDUSTRY CLASSIFICATION SYSTEM (NAICS): 481212",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA881825FB006_9700_FA881824DB005_9700"
+   },
+   {
+    "award_id": "FA881824FB025",
+    "recipient": "STOKE SPACE TECHNOLOGIES, INC.",
+    "amount": 50000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-07-03",
+    "end": "2024-10-03",
+    "test_language": null,
+    "quote": "LAUNCH SERVICE USER GUIDE (LSUG) MINIMUM AWARD TASK ORDER",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA881824FB025_9700_FA881824DB005_9700"
+   },
+   {
+    "award_id": "HQ085926FF780",
+    "recipient": "STOKE SPACE TECHNOLOGIES, INC.",
+    "amount": 500.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Missile Defense Agency",
+    "start": "2025-12-29",
+    "end": "2035-12-28",
+    "test_language": null,
+    "quote": "SCALABLE HOMELAND INNOVATIVE ENTERPRISE LAYERED DEFENSE (SHIELD) INITIAL ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FF780_9700_HQ085926DE799_9700"
+   }
+  ],
+  "Relativity Space": [
+   {
+    "award_id": "FA239424CB012",
+    "recipient": "RELATIVITY SPACE, INC.",
+    "amount": 8765978.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-01-17",
+    "end": "2026-04-17",
+    "test_language": null,
+    "quote": "REAL TIME FLAW DETECTION IN LARGE FORMAT ADDITIVE MANUFACTURING",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA239424CB012_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80KSC023FA106",
+    "recipient": "RELATIVITY SPACE, INC.",
+    "amount": 225000.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2023-03-29",
+    "end": "2032-01-27",
+    "test_language": null,
+    "quote": "VENTURE-CLASS ACQUISITION OF DEDICATED AND RIDESHARE (VADR) UMBRELLA TASK ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80KSC023FA106_8000_80KSC022DA106_8000"
+   },
+   {
+    "award_id": "HQ085926FG337",
+    "recipient": "RELATIVITY SPACE, INC.",
+    "amount": 500.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Missile Defense Agency",
+    "start": "2026-01-21",
+    "end": "2035-12-28",
+    "test_language": null,
+    "quote": "SCALABLE HOMELAND INNOVATIVE ENTERPRISE LAYERED DEFENSE (SHIELD) INITIAL ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FG337_9700_HQ085926DG430_9700"
+   }
+  ],
+  "Firefly Aerospace": [
+   {
+    "award_id": "80JSC023F0041",
+    "recipient": "FIREFLY AEROSPACE INC.",
+    "amount": 112770706.09,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2023-03-14",
+    "end": "2027-08-31",
+    "test_language": null,
+    "quote": "COMMERCIAL LUNAR PAYLOAD SERVICES (CLPS) TASK ORDER CS-3",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80JSC023F0041_8000_80HQTR19D0009_8000"
+   },
+   {
+    "award_id": "80JSC021F0098",
+    "recipient": "FIREFLY AEROSPACE INC.",
+    "amount": 110613083.04,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2021-02-04",
+    "end": "2026-03-31",
+    "test_language": null,
+    "quote": "ENHAMCED LANDING AND MONILITY STUDY",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80JSC021F0098_8000_80HQTR19D0009_8000"
+   },
+   {
+    "award_id": "80JSC025F7026",
+    "recipient": "FIREFLY AEROSPACE INC.",
+    "amount": 108229327.45,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2024-12-18",
+    "end": "2029-04-15",
+    "test_language": null,
+    "quote": "COMMERCIAL LUNAR PAYLOAD SERVICES (CLPS)",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80JSC025F7026_8000_80HQTR19D0009_8000"
+   },
+   {
+    "award_id": "80JSC025F7057",
+    "recipient": "FIREFLY AEROSPACE INC.",
+    "amount": 77936920.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2025-07-29",
+    "end": "2030-04-02",
+    "test_language": null,
+    "quote": "COMMERCIAL LUNAR PAYLOAD SERVICES (CLPS) CONTRACT TASK ORDER CS-6.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80JSC025F7057_8000_80HQTR19D0009_8000"
+   },
+   {
+    "award_id": "80KSC023FA112",
+    "recipient": "FIREFLY AEROSPACE INC.",
+    "amount": 24174004.65,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2023-03-29",
+    "end": "2032-01-27",
+    "test_language": null,
+    "quote": "VENTURE-CLASS ACQUISITION OF DEDICATED AND RIDESHARE (VADR) UMBRELLA TASK ORDER",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80KSC023FA112_8000_80KSC022DA112_8000"
+   },
+   {
+    "award_id": "80JSC023F0108",
+    "recipient": "FIREFLY AEROSPACE INC.",
+    "amount": 19323865.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2023-08-25",
+    "end": "2027-08-31",
+    "test_language": null,
+    "quote": "COMMERCIAL LUNAR PAYLOAD SERVICES (CLPS)",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80JSC023F0108_8000_80HQTR19D0009_8000"
+   }
+  ],
+  "Rocket Lab": [
+   {
+    "award_id": "80KSC023FA107",
+    "recipient": "ROCKET LAB USA INC",
+    "amount": 45045522.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2023-03-29",
+    "end": "2032-01-27",
+    "test_language": null,
+    "quote": "VENTURE-CLASS ACQUISITION OF DEDICATED AND RIDESHARE (VADR) UMBRELLA TASK ORDER",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80KSC023FA107_8000_80KSC022DA107_8000"
+   },
+   {
+    "award_id": "FA881824FB016",
+    "recipient": "ROCKET LAB USA INC",
+    "amount": 14496100.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-04-08",
+    "end": "2026-05-08",
+    "test_language": null,
+    "quote": "THE OBJECTIVE OF THE STP-S30 MISSION IS TO DELIVER SCIENTIFIC RESEARCH AND DEVELOPMENT EXPERIMENTS TO SPACE THAT MATURE EXISTING CAPABILITIES AND DEMONSTRATE NEXT-GENERATION TECHNOLOGY IN THE SPACE DOMAIN TO ENSURE A FUT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA881824FB016_9700_FA881820D0008_9700"
+   },
+   {
+    "award_id": "FA881125FB007",
+    "recipient": "ROCKET LAB NATIONAL SECURITY LLC",
+    "amount": 5000000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-03-28",
+    "end": "2026-03-28",
+    "test_language": null,
+    "quote": "NATIONAL SECURITY SPACE LAUNCH (NSSL) PHASE 3 LANE 1 LAUNCH SERVICES PROCUREMENT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA881125FB007_9700_FA881125DB007_9700"
+   },
+   {
+    "award_id": "FA930024C6007",
+    "recipient": "ROCKET LAB USA INC",
+    "amount": 960000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-09-09",
+    "end": "2026-01-21",
+    "test_language": null,
+    "quote": "DIGITAL ENGINEERING APPROACH FOR ARCHIMEDES ENGINE DEVELOPMENT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930024C6007_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80HQTR24CA009",
+    "recipient": "ROCKET LAB USA INC",
+    "amount": 625000.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2024-09-27",
+    "end": "2024-12-26",
+    "test_language": null,
+    "quote": "CONTRACTOR TO PROVIDE RAPID STUDIES FOR THE MARS SAMPLE RETURN (MSR) PROGRAM.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80HQTR24CA009_8000_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80AFRC25FA060",
+    "recipient": "ROCKET LAB USA INC",
+    "amount": 546480.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2025-09-26",
+    "end": "2026-03-13",
+    "test_language": null,
+    "quote": "THE CONTRACTOR SHALL DEVELOP GEN 1 SOLAR SAIL MISSION CONCEPTS THAT WILL ADDRESS THE OBJECTIVES OF A FUTURE IMPLEMENTATION PLAN IN ACCORDANCE WITH THE MANIFEST REQUIREMENTS DOCUMENT (MRD) TITLED T0412 GEN1 SOLAR SAIL DEM",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80AFRC25FA060_8000_80AFRC24DA014_8000"
+   }
+  ],
+  "Ursa Major": [
+   {
+    "award_id": "FA930025C6011",
+    "recipient": "URSA MAJOR TECHNOLOGIES, INC.",
+    "amount": 20047003.16,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-05-01",
+    "end": "2026-09-16",
+    "test_language": null,
+    "quote": "STORABLE ROCKET ENGINE FOR HYPERSONIC APPLICATIONS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930025C6011_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA930023C6005",
+    "recipient": "URSA MAJOR TECHNOLOGIES, INC.",
+    "amount": 14558000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2023-03-10",
+    "end": "2026-05-28",
+    "test_language": null,
+    "quote": "RESEARCH AND DEVELOPMENT OF LIQUID ROCKET ENGINE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930023C6005_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA930025C6001",
+    "recipient": "URSA MAJOR TECHNOLOGIES, INC.",
+    "amount": 3150000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-06-30",
+    "end": "2027-05-30",
+    "test_language": null,
+    "quote": "ADVANCED LIQUID ROCKET ENGINE FOR APPLICATION AND LAUNCH",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930025C6001_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA930025C6018",
+    "recipient": "URSA MAJOR TECHNOLOGIES, INC.",
+    "amount": 1900000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-09-12",
+    "end": "2027-06-14",
+    "test_language": null,
+    "quote": "SUBSCALE MAIN INJECTOR DEVELOPMENT FOR REUSABLE METHANE BOOSTER ENGINES",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930025C6018_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA930025C6007",
+    "recipient": "URSA MAJOR TECHNOLOGIES, INC.",
+    "amount": 171150.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-04-15",
+    "end": "2026-10-15",
+    "test_language": null,
+    "quote": "HOTFIRE DEMONSTRATION OF HIGH-TEMPERATURE KEROSENE FUELS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930025C6007_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA865625FB067",
+    "recipient": "URSA MAJOR TECHNOLOGIES, INC.",
+    "amount": 1000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-04-10",
+    "end": "2025-04-14",
+    "test_language": null,
+    "quote": "FOURTH ON-RAMP FOR ENTERPRISE-WIDE AGILE ACQUISITION CONTRACT (EWAAC) VEHICLE.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA865625FB067_9700_FA865625DB047_9700"
+   }
+  ],
+  "Venus Aerospace": [
+   {
+    "award_id": "FA864924P0453",
+    "recipient": "VENUS AEROSPACE CORP.",
+    "amount": 1249286.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-06-07",
+    "end": "2025-09-08",
+    "test_language": null,
+    "quote": "DETONATION ENGINE POWERED ROCKET BASED COMBINED CYCLE DEVELOPMENT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864924P0453_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80NSSC24PB474",
+    "recipient": "VENUS AEROSPACE CORP.",
+    "amount": 155908.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2024-08-07",
+    "end": "2025-02-06",
+    "test_language": null,
+    "quote": "FY24 SBIR PHASE I- VENUS AEROSPACE ROTATING DETONATION NOZZLE DEVELOPMENT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80NSSC24PB474_8000_-NONE-_-NONE-"
+   }
+  ],
+  "Impulse Space": [
+   {
+    "award_id": "FA880925CB001",
+    "recipient": "IMPULSE SPACE, INC.",
+    "amount": 24811900.5,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-10-03",
+    "end": "2026-12-31",
+    "test_language": null,
+    "quote": "IMPULSE SPACE SBIR PHASE III",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA880925CB001_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA880925CB007",
+    "recipient": "IMPULSE SPACE, INC.",
+    "amount": 12750000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-02-28",
+    "end": "2026-09-28",
+    "test_language": null,
+    "quote": "IMPULSE SPACE PHASE 2 STRATFI",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA880925CB007_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA864924P0376",
+    "recipient": "IMPULSE SPACE, INC.",
+    "amount": 1699950.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-04-05",
+    "end": "2025-12-31",
+    "test_language": null,
+    "quote": "SBIR PHASE II PROPOSAL F2D-9561 - RESPONSIVE SPACE OPERATIONS WITH A MULTI-ORBIT ORBITAL MANEUVERING VEHICLE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864924P0376_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA864924P0375",
+    "recipient": "IMPULSE SPACE, INC.",
+    "amount": 1699899.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-05-15",
+    "end": "2026-03-31",
+    "test_language": null,
+    "quote": "TACTICALLY RESPONSIVE GEOSYNCHRONOUS EQUATORIAL ORBIT WITH A HIGH ENERGY KICK STAGE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864924P0375_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80NSSC26C0008",
+    "recipient": "IMPULSE SPACE, INC.",
+    "amount": 1300000.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2026-01-12",
+    "end": "2027-04-11",
+    "test_language": null,
+    "quote": "SBIR PHASE III 80NSSC26C0008 - HELIOS KICK STAGE MISSION CAPABILITY STUDIES",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80NSSC26C0008_8000_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80KSC024FA089",
+    "recipient": "IMPULSE SPACE, INC.",
+    "amount": 244116.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2024-08-22",
+    "end": "2027-02-03",
+    "test_language": null,
+    "quote": "NEW AWARD OF UMBRELLA TASK ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80KSC024FA089_8000_80KSC024DA089_8000"
+   }
+  ],
+  "Astranis": [
+   {
+    "award_id": "FA880725FB019",
+    "recipient": "ASTRANIS SPACE TECHNOLOGIES CORP",
+    "amount": 7496646.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-07-28",
+    "end": "2026-01-31",
+    "test_language": null,
+    "quote": "DESIGN, DEVELOP, TEST, AND PRODUCE GLOBAL VARIANTS OF THE PROTECTED TACTICAL SATELLITE COMMUNICATION SPACE VEHICLES, ASSOCIATED GROUND SYSTEMS AND ANCHOR STATIONS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA880725FB019_9700_FA880725DB004_9700"
+   },
+   {
+    "award_id": "FA880822C0004",
+    "recipient": "ASTRANIS SPACE TECHNOLOGIES CORP",
+    "amount": 6918000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2022-09-30",
+    "end": "2027-10-17",
+    "test_language": null,
+    "quote": "PHASE III SMALL BUSINESS INNOVATION RESEARCH FOR PROTECTED ANTI-JAM TACTICAL SATELLITE COMMUNICATIONS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA880822C0004_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA880724CB005",
+    "recipient": "ASTRANIS SPACE TECHNOLOGIES CORP",
+    "amount": 3300000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-06-14",
+    "end": "2026-07-15",
+    "test_language": null,
+    "quote": "MICROGEO SUPPORT OF PROTECTED TACTICAL WAVEFORM OVER COMMERCIAL AND COMMERCIAL INTEGRATION WITH PROTECTED TACTICAL ENTERPRISE SERVICE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA880724CB005_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80NSSC24PB266",
+    "recipient": "ASTRANIS SPACE TECHNOLOGIES CORP",
+    "amount": 149983.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2024-08-07",
+    "end": "2025-02-06",
+    "test_language": null,
+    "quote": "FY24 SBIR PHASE I- ADVANCING LUNAR COMMUNICATION INFRASTRUCTURE USING FLEXIBLE SOFTWARE DEFINED RADIO",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80NSSC24PB266_8000_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA881926FB009",
+    "recipient": "ASTRANIS SPACE TECHNOLOGIES CORP",
+    "amount": 100000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2026-04-28",
+    "end": "2027-04-27",
+    "test_language": null,
+    "quote": "CONCEPT DEVELOPMENT MINIMUM GUARANTEE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA881926FB009_9700_FA881926DB013_9700"
+   }
+  ],
+  "Apex": [
+   {
+    "award_id": "FA880925CB005",
+    "recipient": "APEX TECHNOLOGY, INC.",
+    "amount": 22000000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-02-13",
+    "end": "2029-01-12",
+    "test_language": null,
+    "quote": "SBIR PHASE II STRATFI TO APEX TECHNOLOGY, INC FOR MULTI-MISSION SATELLITES FOR LEO AND GEO DYNAMIC SPACE OPERATIONS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA880925CB005_9700_-NONE-_-NONE-"
+   }
+  ],
+  "K2 Space": [
+   {
+    "award_id": "FA880925CB003",
+    "recipient": "K2 SPACE CORPORATION",
+    "amount": 18391989.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-12-18",
+    "end": "2026-12-17",
+    "test_language": null,
+    "quote": "COMPLETING THE FIRST MEGA CLASS SATELLITE BUS, DESIGNING AND BUILDING DAF PAYLOAD INTERFACES, INTEGRATING THOSE PAYLOADS ONTO THE BUS, LAUNCHING THE COMPLETED SATELLITE, AND OPERATING THE SATELLITE FOR A MINIMUM OF 1 YEA",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA880925CB003_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA880924CB002",
+    "recipient": "K2 SPACE CORPORATION",
+    "amount": 3800000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-06-10",
+    "end": "2025-06-10",
+    "test_language": null,
+    "quote": "K2 SPACE CORPORATION MISSION ASSURANCE POSTURE AND DESIGN ENGINEERING ACTIVITIES REQUIRED IN SUPPLYING THEIR MEGA CLASS BUS PLATFORM ON A CADENCE COMMENSURATE WITH SERB EXPERIMENT PAYLOAD SELECTIONS, OR OTHER DAF PAYLOAD",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA880924CB002_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA864924P0377",
+    "recipient": "K2 SPACE CORPORATION",
+    "amount": 1691701.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2023-12-15",
+    "end": "2025-05-30",
+    "test_language": null,
+    "quote": "HIGH POWERED ELECTRIC PROPULSION SYSTEM FOR SPACE VEHICLES",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864924P0377_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA864923P1263",
+    "recipient": "K2 SPACE CORPORATION",
+    "amount": 1249626.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2023-09-22",
+    "end": "2025-03-24",
+    "test_language": null,
+    "quote": "PRECISION POINTING FOR HIGH RESOLUTION OPTICAL AND RADIO FREQUENCY REMOTE SENSING SATELLITES",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864923P1263_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "HQ085926FE535",
+    "recipient": "K2 SPACE CORPORATION",
+    "amount": 500.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Missile Defense Agency",
+    "start": "2025-12-29",
+    "end": "2035-12-28",
+    "test_language": null,
+    "quote": "SCALABLE HOMELAND INNOVATIVE ENTERPRISE LAYERED DEFENSE (SHIELD) INITIAL ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FE535_9700_HQ085926DE857_9700"
+   }
+  ],
+  "True Anomaly": [
+   {
+    "award_id": "FA864924P0386",
+    "recipient": "TRUE ANOMALY, INC",
+    "amount": 1629064.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-04-03",
+    "end": "2024-12-16",
+    "test_language": null,
+    "quote": "SBIR PHASE II PROPOSAL F2D-9879 - RESPONSIVE SPACE VEHICLE DESIGN - EXTENDING JACKAL",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864924P0386_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA881926FB017",
+    "recipient": "TRUE ANOMALY, INC",
+    "amount": 100000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2026-04-28",
+    "end": "2027-04-27",
+    "test_language": null,
+    "quote": "CONCEPT DEVELOPMENT MINIMUM GUARANTEE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA881926FB017_9700_FA881926DB009_9700"
+   },
+   {
+    "award_id": "HQ085926FF710",
+    "recipient": "TRUE ANOMALY, INC",
+    "amount": 500.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Missile Defense Agency",
+    "start": "2025-12-29",
+    "end": "2035-12-28",
+    "test_language": null,
+    "quote": "SCALABLE HOMELAND INNOVATIVE ENTERPRISE LAYERED DEFENSE (SHIELD) INITIAL ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FF710_9700_HQ085926DF647_9700"
+   }
+  ],
+  "Sierra Space": [
+   {
+    "award_id": "80HQTR17C0009",
+    "recipient": "SIERRA SPACE CORP",
+    "amount": 27273827.87,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2017-08-29",
+    "end": "2026-03-20",
+    "test_language": null,
+    "quote": "IGF::OT::IGF NASA BAA/NRA AWARD. PROPOSAL TITLE \"NEXT SPACE TECHNOLOGIES FOR EXPLORATION PARTNERSHIP - NEXTSTEP-2. THE NEXTSTEP-2 STUDY CONDUCTED BY SNC WILL EVALUATE MISSION ARCHITECTURE, SYSTEM INTERFACES, AND SUBSYS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80HQTR17C0009_8000_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA930022C6022",
+    "recipient": "SIERRA SPACE CORP",
+    "amount": 20151403.78,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2022-07-19",
+    "end": "2024-10-17",
+    "test_language": null,
+    "quote": "SMALL BUSINESS INNOVATIVE RESEARCH (SBIR) PHASE III \"MATURATION OF SNC UPPER STAGE VORTEX ENGINE ENHANCEMENT\"",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930022C6022_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA930024C6009",
+    "recipient": "SIERRA SPACE CORP",
+    "amount": 15997233.9,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-09-25",
+    "end": "2026-12-28",
+    "test_language": null,
+    "quote": "SBIR PHASE III - MATURATION OF THE VR25K-A ADVANCED UPPER STAGE ENGINE.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930024C6009_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80HQTR19C0019",
+    "recipient": "SIERRA SPACE CORP",
+    "amount": 12494436.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2019-05-02",
+    "end": "2028-09-30",
+    "test_language": null,
+    "quote": "BAA R&D - THE NEXT SPACE TECHNOLOGIES FOR EXPLORATION PARTNERSHIPS -2 (NEXTSTEP-2) APPENDIX F: LOGISTICS REDUCTION (LR) IN SPACE BY TRASH COMPACTION AND PROCESSING SYSTEM (TCPS) BROAD AGENCY ANNOUNCEMENT (BAA) WAS ORIGIN",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80HQTR19C0019_8000_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80JSC021F0074",
+    "recipient": "SIERRA SPACE CORP",
+    "amount": 8275635.09,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2021-03-24",
+    "end": "2025-03-31",
+    "test_language": null,
+    "quote": "SUSTAINING ENGINEERING SERVICES FOR THE ADVANCED PLANT HABITAT (APH).",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80JSC021F0074_8000_80JSC017D0018_8000"
+   },
+   {
+    "award_id": "FA930020C3001",
+    "recipient": "SIERRA SPACE CORP",
+    "amount": 7775093.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2019-10-07",
+    "end": "2024-12-30",
+    "test_language": null,
+    "quote": "SBIR PHASE III WITH SNC",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA930020C3001_9700_-NONE-_-NONE-"
+   }
+  ],
+  "Saronic": [
+   {
+    "award_id": "HQ085926FE712",
+    "recipient": "SARONIC TECHNOLOGIES, INC",
+    "amount": 500.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Missile Defense Agency",
+    "start": "2025-12-29",
+    "end": "2035-12-28",
+    "test_language": null,
+    "quote": "SCALABLE HOMELAND INNOVATIVE ENTERPRISE LAYERED DEFENSE (SHIELD) INITIAL ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FE712_9700_HQ085926DF529_9700"
+   }
+  ],
+  "Castelion": [
+   {
+    "award_id": "N6833526F1022",
+    "recipient": "CASTELION CORPORATION",
+    "amount": 154996571.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Navy",
+    "start": "2026-02-25",
+    "end": "2028-04-01",
+    "test_language": null,
+    "quote": "PER SOW, G/R LIST, AND TECHNICAL PROPOSAL",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_N6833526F1022_9700_N6833526G0006_9700"
+   },
+   {
+    "award_id": "FA861224CB010",
+    "recipient": "CASTELION CORPORATION",
+    "amount": 55849158.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-10-02",
+    "end": "2026-11-26",
+    "test_language": null,
+    "quote": "LOW-COST HIGHLY MANUFACTURABLE LONG-RANGE STRIKE WEAPON PRODUCTION SMALL BUSINESS INDEPENDENT RESEARCH (SBIR) PHASE III",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA861224CB010_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA238523CB007",
+    "recipient": "CASTELION CORPORATION",
+    "amount": 16972881.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2023-09-11",
+    "end": "2027-04-19",
+    "test_language": null,
+    "quote": "FUTURE OPERATIONAL CAPABILITIES FOR THE US (FOCUS)",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA238523CB007_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "N0001424C1511",
+    "recipient": "CASTELION CORPORATION",
+    "amount": 2999944.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Navy",
+    "start": "2024-02-23",
+    "end": "2024-11-25",
+    "test_language": null,
+    "quote": "CASTELION WILL PERFORM AN INITIAL TRADE STUDY TO IDENTIFY COST, SCHEDULE, AND PERFORMANCE ESTIMATES OF PRODUCING AN AIR-LAUNCHED ANTI-SURFACE WEAPON AND SHIPPING SYSTEM NOT TO EXCEED 212\" IN LENGTH WITH AN ON-AIRCRAFT WE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_N0001424C1511_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "HQ086025CE025",
+    "recipient": "CASTELION CORPORATION",
+    "amount": 1985913.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Missile Defense Agency",
+    "start": "2025-09-08",
+    "end": "2027-09-07",
+    "test_language": null,
+    "quote": "COMPACT HYPERSONIC MISSILE/EFFECTOR REACTIVE MATERIAL (CHYMERA) WARHEAD PROTOTYPE AND DEMONSTRATION",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_HQ086025CE025_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA238523CB008",
+    "recipient": "CASTELION CORPORATION",
+    "amount": 1728616.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2023-09-11",
+    "end": "2025-09-11",
+    "test_language": null,
+    "quote": "REMOTE SENSING IN A TEU (RESINATE)",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA238523CB008_9700_-NONE-_-NONE-"
+   }
+  ],
+  "Epirus": [
+   {
+    "award_id": "FA865023C7305",
+    "recipient": "EPIRUS, INC",
+    "amount": 2484089.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2023-03-03",
+    "end": "2025-02-04",
+    "test_language": null,
+    "quote": "AN ULTRA EFFICIENT ANALOG CORRELATOR USING TIME-VARYING TRANSMISSION LINE (TVTL) TECHNOLOGY (ULTRA-AC)",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA865023C7305_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA873024PB006",
+    "recipient": "EPIRUS, INC",
+    "amount": 492196.71,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-01-17",
+    "end": "2025-03-31",
+    "test_language": null,
+    "quote": "HIGH POWER MICROWAVE SUSCEPTIBILITY STUDY",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA873024PB006_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W5170125C0016",
+    "recipient": "EPIRUS, INC",
+    "amount": 249886.19,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2025-02-07",
+    "end": "2025-07-21",
+    "test_language": null,
+    "quote": "\"EPIRUS, INC.\" SBIR PHASE I",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170125C0016_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "HQ085926FF407",
+    "recipient": "EPIRUS, INC",
+    "amount": 500.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Missile Defense Agency",
+    "start": "2025-12-29",
+    "end": "2035-12-28",
+    "test_language": null,
+    "quote": "SCALABLE HOMELAND INNOVATIVE ENTERPRISE LAYERED DEFENSE (SHIELD) INITIAL ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FF407_9700_HQ085926DF198_9700"
+   }
+  ],
+  "Mach Industries": [
+   {
+    "award_id": "W911NF24C0085",
+    "recipient": "MACH INDUSTRIES INC",
+    "amount": 1500000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2024-09-23",
+    "end": "2026-05-22",
+    "test_language": null,
+    "quote": "BAA STRATEGIC STRIKE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W911NF24C0085_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "M6785424C6518",
+    "recipient": "MACH INDUSTRIES INC",
+    "amount": 74998.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Navy",
+    "start": "2023-01-31",
+    "end": "2024-05-07",
+    "test_language": null,
+    "quote": "SMALL BUSINESS INNOVATION RESEARCH TOPIC PHASE I TOPIC 23.4",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_M6785424C6518_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA864924P0775",
+    "recipient": "MACH INDUSTRIES INC",
+    "amount": 73450.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-05-16",
+    "end": "2024-08-19",
+    "test_language": null,
+    "quote": "GLOBAL POSITIONING SYSTEM (GPS)/GLOBAL NAVIGATION SATELLITE SYSTEM (GNSS) DENIED NAVIGATION FOR MACH INDUSTRIES GLIDE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864924P0775_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "HQ085926FG017",
+    "recipient": "MACH INDUSTRIES INC",
+    "amount": 500.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Missile Defense Agency",
+    "start": "2026-01-21",
+    "end": "2035-12-28",
+    "test_language": null,
+    "quote": "SCALABLE HOMELAND INNOVATIVE ENTERPRISE LAYERED DEFENSE (SHIELD) INITIAL ORDER.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_HQ085926FG017_9700_HQ085926DF991_9700"
+   }
+  ],
+  "Skydio": [
+   {
+    "award_id": "12639525F0827",
+    "recipient": "SKYDIO, INC",
+    "amount": 874873.3,
+    "agency": "Department of Agriculture",
+    "sub_agency": "Animal and Plant Health Inspection Service",
+    "start": "2025-07-21",
+    "end": "2025-11-18",
+    "test_language": null,
+    "quote": "DELIVERY ORDER FOR UAS AND ACCESSORIES",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_12639525F0827_12K3_12639525D0008_12K3"
+   },
+   {
+    "award_id": "FA701424P0039",
+    "recipient": "SKYDIO, INC",
+    "amount": 612283.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-09-12",
+    "end": "2025-01-12",
+    "test_language": null,
+    "quote": "THE AIR FORCE STRATEGIC STUDIES GROUP (SSG) IS PURCHASING 20 SMALL UNMANNED AIRCRAFT SYSTEMS SUAS (DRONES) TO FACILITATE AIRMAN FIELD TRAINING EXERCISES AT VARIOUS USAF BASES.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA701424P0039_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "12639524F0517",
+    "recipient": "SKYDIO, INC",
+    "amount": 427646.56,
+    "agency": "Department of Agriculture",
+    "sub_agency": "Animal and Plant Health Inspection Service",
+    "start": "2024-04-04",
+    "end": "2024-07-03",
+    "test_language": null,
+    "quote": "DELIVERY ORDER FOR UAS AND ACCESSORIES",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_12639524F0517_12K3_12639524D0014_12K3"
+   },
+   {
+    "award_id": "140D0424F0556",
+    "recipient": "SKYDIO, INC",
+    "amount": 420316.14,
+    "agency": "Department of the Interior",
+    "sub_agency": "Departmental Offices",
+    "start": "2024-04-25",
+    "end": "2024-08-25",
+    "test_language": null,
+    "quote": "SKYDIO X2E AND NEXT GENERATION UNMANNED AIRCRAFT SYSTEMS BLANKET PURCHASE AGREEMENT ORDER",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_140D0424F0556_1406_140D0424A0008_1406"
+   },
+   {
+    "award_id": "FA568225P0048",
+    "recipient": "SKYDIO, INC",
+    "amount": 403115.4,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-09-09",
+    "end": "2026-03-31",
+    "test_language": null,
+    "quote": "31 SFS SKYDIO DRONES",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA568225P0048_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W911S725PA012",
+    "recipient": "SKYDIO, INC",
+    "amount": 326218.32,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2025-08-19",
+    "end": "2025-08-28",
+    "test_language": null,
+    "quote": "PURCHASE 18 SKYDIO X2D DRONE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W911S725PA012_9700_-NONE-_-NONE-"
+   }
+  ],
+  "Overland AI": [
+   {
+    "award_id": "M6785425C6532",
+    "recipient": "OVERLAND AI INC",
+    "amount": 2241642.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Navy",
+    "start": "2025-05-16",
+    "end": "2026-11-18",
+    "test_language": null,
+    "quote": "SMALL BUSINESS INNOVATION RESEARCH PHASE II",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_M6785425C6532_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W5170126CA063",
+    "recipient": "OVERLAND AI INC",
+    "amount": 1999989.25,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2026-04-15",
+    "end": "2027-10-15",
+    "test_language": null,
+    "quote": "SBIR DIRECT TO PHASE II TOPIC # A254-020 OVERLAND AI INC",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170126CA063_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W5170125CA222",
+    "recipient": "OVERLAND AI INC",
+    "amount": 1999876.04,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2025-08-29",
+    "end": "2027-02-28",
+    "test_language": null,
+    "quote": "SMALL BUSINESS INNOVATIVE RESEARCH (SBIR) DIRECT TO PHASE II (D2PHII), TOPIC # A254-008, OVERLAND AI INC",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170125CA222_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W5170126CA020",
+    "recipient": "OVERLAND AI INC",
+    "amount": 1999822.85,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2026-01-19",
+    "end": "2027-07-19",
+    "test_language": null,
+    "quote": "SMALL BUSINESS INNOVATION RESEARCH, DIRECT TO PHASE II TOPIC A254-P030, XTECHOVERWATCH OPEN TOPIC",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170126CA020_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W911NF25C0004",
+    "recipient": "OVERLAND AI INC",
+    "amount": 1897682.83,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2024-10-25",
+    "end": "2026-04-24",
+    "test_language": null,
+    "quote": "SMALL BUSINESS INNOVATION RESEARCH TO DEVELOP AND DEMONSTRATE SOLUTIONS OR COMPONENTS OF SOLUTIONS FOR TERRAIN SHAPING TO DELAY, DETER, AND DENY ENEMY FORCES FREEDOM OF MOVEMENT 70 TO 150KM BEYOND THE FORWARD LINE OF TRO",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W911NF25C0004_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W911NF24P0032",
+    "recipient": "OVERLAND AI INC",
+    "amount": 245696.22,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2024-04-15",
+    "end": "2024-10-29",
+    "test_language": null,
+    "quote": "SBIR PHASE 1: DEEP TERRAIN SHAPING WITH UNCREWED GROUND VEHICLES",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W911NF24P0032_9700_-NONE-_-NONE-"
+   }
+  ],
+  "HavocAI": [
+   {
+    "award_id": "W5170126CA043",
+    "recipient": "HAVOCAI INC.",
+    "amount": 1999996.76,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2026-03-09",
+    "end": "2027-09-09",
+    "test_language": null,
+    "quote": "SMALL BUSINESS INNOVATION RESEARCH, DIRECT TO PHASE II TOPIC A254-P026, XTECHPACIFIC OPEN TOPIC",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170126CA043_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W5170126CA035",
+    "recipient": "HAVOCAI INC.",
+    "amount": 1999991.8,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2026-01-30",
+    "end": "2027-07-30",
+    "test_language": null,
+    "quote": "A254-P030 - HAVOC OVERWATCH CONTROL - PLATFORM-AGNOSTIC COLLABORATIVE AUTONOMY AND INTUITIVE UI",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170126CA035_9700_-NONE-_-NONE-"
+   }
+  ],
+  "Archer Aviation": [
+   {
+    "award_id": "FA228023F0008",
+    "recipient": "ARCHER AVIATION INC.",
+    "amount": 1293077.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2023-07-26",
+    "end": "2024-12-31",
+    "test_language": null,
+    "quote": "MIDNIGHT AERIAL AND GROUND TERRAIN AVOIDANCE AUTONOMY",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA228023F0008_9700_FA228023D0001_9700"
+   }
+  ],
+  "Electra": [
+   {
+    "award_id": "80GRC024CA036",
+    "recipient": "ELECTRA.AERO INC.",
+    "amount": 3485340.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2024-09-03",
+    "end": "2026-07-17",
+    "test_language": null,
+    "quote": "R&D CONTRACT TO CREATE SCENARIOS THAT PROVIDE CONTEXT FOR DEVELOPING AND ASSESSING THE IMPACT OF AVIATION TECHNOLOGIES. DEVELOP THE MODELS FOR THE DESIGN AND OPTIMIZATION OF TRULY INTEGRATED VEHICLES & APPLYING THOSE MOD",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80GRC024CA036_8000_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W5170125CA133",
+    "recipient": "ELECTRA.AERO INC.",
+    "amount": 1949772.3,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2025-04-21",
+    "end": "2026-10-20",
+    "test_language": null,
+    "quote": "SEE ATTACHMENT 1 - SCOPE OF WORK (SOW).",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170125CA133_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W5170124C0016",
+    "recipient": "ELECTRA.AERO INC.",
+    "amount": 1899167.51,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2023-11-03",
+    "end": "2025-01-31",
+    "test_language": null,
+    "quote": "SMALL BUSINESS INNOVATION RESEARCH PHASE II SEQUENTIAL, TOPIC AF221-DCS01: POWER WIND TUNNEL TEST OF DEP BLOWN WING AIRCRAFT. THIS IS A FOLLOW-ON TO PHASE II CONTRACT FA8730-22-C-0065.",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170124C0016_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80NSSC23CA094",
+    "recipient": "ELECTRA.AERO INC.",
+    "amount": 845050.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2023-06-07",
+    "end": "2026-07-15",
+    "test_language": null,
+    "quote": "SBIR PHASE II INTEGRATED FLIGHT VALIDATION OF HALE UAP AVIONICS & PROPULSION SYSTEMS FOR SCIENCE MISSIONS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80NSSC23CA094_8000_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W5170124C0107",
+    "recipient": "ELECTRA.AERO INC.",
+    "amount": 249864.54,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2024-05-03",
+    "end": "2025-01-03",
+    "test_language": null,
+    "quote": "\"ELECTRA.AERO, INC.\" SBIR PHASE I",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W5170124C0107_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA228024P0005",
+    "recipient": "ELECTRA.AERO INC.",
+    "amount": 179097.7,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2024-05-07",
+    "end": "2024-12-31",
+    "test_language": null,
+    "quote": "SBIR PHASE 1 TOPIC AF233-0004 ELECTRA AERO TRADESPACE EXPLORATION FOR LIGHTWEIGHT MULTI-APPLICATION HYBRID- ELECTRIC PROPULSION SYSTEMS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA228024P0005_9700_-NONE-_-NONE-"
+   }
+  ],
+  "Oklo": [
+   {
+    "award_id": "FA830723C0001",
+    "recipient": "TOKLO TECHNOLOGIES, LLC",
+    "amount": 1240980.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2023-03-01",
+    "end": "2025-02-28",
+    "test_language": null,
+    "quote": "CRYPTOGRAPHIC MODERNIZATION 2 PROGRAM MANAGEMENT OFFICE DEPARTMENT OF DEFENSE ALLIED CRYPTOGRAPHIC MODERNIZATION ACTION",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA830723C0001_9700_-NONE-_-NONE-"
+   }
+  ],
+  "Agility Robotics": [
+   {
+    "award_id": "N0017324P2400",
+    "recipient": "AGILITY ROBOTICS, INC.",
+    "amount": 510000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Navy",
+    "start": "2024-09-30",
+    "end": "2025-06-01",
+    "test_language": null,
+    "quote": "BIPEDAL HUMANOID ROBOTS FOR INTERACTION",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_N0017324P2400_9700_-NONE-_-NONE-"
+   }
+  ],
+  "Apptronik": [
+   {
+    "award_id": "W911QX22C0018",
+    "recipient": "APPTRONIK INC",
+    "amount": 1837402.05,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2022-07-21",
+    "end": "2024-07-20",
+    "test_language": null,
+    "quote": "SBIR II, TOPIC A19-166, VIRGO PHASE II - AUTONOMOUS MOBILE MANIPULATION PLATFORM",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W911QX22C0018_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "N0001423P1002",
+    "recipient": "APPTRONIK INC",
+    "amount": 249996.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Navy",
+    "start": "2023-08-03",
+    "end": "2024-08-30",
+    "test_language": null,
+    "quote": "THE TECHNICAL OBJECTIVE OF THIS WORK IS TO DELIVER A ROADMAP TO THE NAVY OF WHAT S&T GAPS EXIST AND HOW TO BRIDGE THEM TO DELIVER A HUMAN-APPROXIMATE REPAIR CAPABILITY FOR SHIPS UNDERWAY IN THE NEXT TWENTY YEARS OR SOONE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_N0001423P1002_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80NSSC24PB263",
+    "recipient": "APPTRONIK INC",
+    "amount": 149136.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2024-09-03",
+    "end": "2025-02-06",
+    "test_language": null,
+    "quote": "FY24 SBIR PHASE I- ROBOTIC, EFFICIENT ARM FOR CARGO HANDLING",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80NSSC24PB263_8000_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "80NSSC22CA037",
+    "recipient": "APPTRONIK INC",
+    "amount": 79367.0,
+    "agency": "National Aeronautics and Space Administration",
+    "sub_agency": "National Aeronautics and Space Administration",
+    "start": "2022-02-10",
+    "end": "2022-06-10",
+    "test_language": null,
+    "quote": "EO14042 SBIR PHASE III ADVANCED DEXTEROUS ROBOTIC SYSTEMS DEVELOPMENT REQUIREMENTS AND ARCHITECTURE DEVELOPMENT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_80NSSC22CA037_8000_-NONE-_-NONE-"
+   }
+  ],
+  "Boston Dynamics": [
+   {
+    "award_id": "W91CRB25C0002",
+    "recipient": "BOSTON DYNAMICS, INC.",
+    "amount": 4404480.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2025-02-27",
+    "end": "2025-12-05",
+    "test_language": null,
+    "quote": "SPOT ROBOT DOGS WITH GOVERNMENT & PUBLIC SAFETY KIT IN SUPPORT FOR FOREIGN MILITARY SALES CASE RO-B-UGL",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W91CRB25C0002_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W31P4Q13C0107",
+    "recipient": "BOSTON DYNAMICS, INC.",
+    "amount": 2100000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2013-07-16",
+    "end": "2015-09-30",
+    "test_language": null,
+    "quote": "DARPA BAA TECHNICAL DEVELOPMENT EFFORT ENTITLED, \"EFFICIENT HYDRAULIC ACTUATION SYSTEM FOR ROBOTICS\".",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W31P4Q13C0107_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "75N99025P00105",
+    "recipient": "BOSTON DYNAMICS, INC.",
+    "amount": 853923.58,
+    "agency": "Department of Health and Human Services",
+    "sub_agency": "National Institutes of Health",
+    "start": "2025-09-29",
+    "end": "2027-09-28",
+    "test_language": null,
+    "quote": "PROVIDE TWO (2) QUADRUPED INDUSTRIAL INSPECTION ROBOTS, SENSING EQUIPMENT, SUPPORT AND COMMAND & CONTROL / DATA ACQUISITION SOFTWARE, TRAINING, FUTURE SUPPORT TO PROVIDE CONTINUOUS PLANT SURVEILLANCE, DATA FOR MACHINE LE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_75N99025P00105_7529_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "N0017323P2054",
+    "recipient": "BOSTON DYNAMICS, INC.",
+    "amount": 472755.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Defense Contract Management Agency",
+    "start": "2023-09-22",
+    "end": "2024-01-25",
+    "test_language": null,
+    "quote": "SPOT ENTERPRISE PACKAGE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_N0017323P2054_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "W911QX25CA001",
+    "recipient": "BOSTON DYNAMICS, INC.",
+    "amount": 304395.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2025-04-16",
+    "end": "2025-06-20",
+    "test_language": null,
+    "quote": "BOSTON DYNAMICS REFURBISHED SPOT ROBOT ENTERPRISE PACKAGES, SPOT ENTERPRISE PLATFORM WITH ARMS TO INCLUDE SAMSUNG TAB ACTIVE 3 TABLETS, CHARGERS, BATTERIES, SPARES, SPOT CALIBRATION BOARDS, AND SPOT CASES, SPOT TABLET CO",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W911QX25CA001_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "1333ND24PNB730286",
+    "recipient": "BOSTON DYNAMICS, INC.",
+    "amount": 91880.0,
+    "agency": "Department of Commerce",
+    "sub_agency": "National Institute of Standards and Technology",
+    "start": "2024-08-01",
+    "end": "2027-07-31",
+    "test_language": null,
+    "quote": "SPOT ROBOT AND ARM MAINTENANCE SERVICE AS WELL AS SPARE PARTS",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_1333ND24PNB730286_1341_-NONE-_-NONE-"
+   }
+  ],
+  "Hadrian": [
+   {
+    "award_id": "W911RQ26CA011",
+    "recipient": "HADRIAN AUTOMATION, INC.",
+    "amount": 39200000.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Army",
+    "start": "2026-03-17",
+    "end": "2027-03-16",
+    "test_language": null,
+    "quote": "DATA RIGHTS AND INTELLECTUAL PROPERTY",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_W911RQ26CA011_9700_-NONE-_-NONE-"
+   }
+  ],
+  "Divergent": [
+   {
+    "award_id": "FA864925P0489",
+    "recipient": "DIVERGENT TECHNOLOGIES, INC.",
+    "amount": 1789453.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-09-02",
+    "end": "2026-12-04",
+    "test_language": null,
+    "quote": "DIVERGENT ADAPTIVE PRODUCTION SYSTEM FOR RAPID, FLEXIBLE AIRCRAFT SUSTAINMENT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864925P0489_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA864925P0518",
+    "recipient": "DIVERGENT TECHNOLOGIES, INC.",
+    "amount": 1745660.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-09-24",
+    "end": "2027-03-01",
+    "test_language": null,
+    "quote": "ADAPTIVE MANUFACTURING TO SCALE PRODUCTION AND INTEGRATION OF THIRD-PARTY INNOVATIONS ACROSS THE DEFENSE INDUSTRIAL BASE",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864925P0518_9700_-NONE-_-NONE-"
+   },
+   {
+    "award_id": "FA864925P0193",
+    "recipient": "DIVERGENT TECHNOLOGIES, INC.",
+    "amount": 106426.0,
+    "agency": "Department of Defense",
+    "sub_agency": "Department of the Air Force",
+    "start": "2025-01-13",
+    "end": "2025-04-17",
+    "test_language": null,
+    "quote": "DIVERGENT ADAPTIVE PRODUCTION SYSTEM FOR FLEXIBLE AIRCRAFT SUSTAINMENT",
+    "url": "https://www.usaspending.gov/award/CONT_AWD_FA864925P0193_9700_-NONE-_-NONE-"
+   }
+  ]
+ }
+}

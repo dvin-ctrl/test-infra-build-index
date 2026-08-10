@@ -274,7 +274,8 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 <div class="wrap">
 
 <header>
-  <p class="eyebrow">Nominal / GTM engineering</p>
+  <p class="eyebrow">Nominal / GTM engineering &middot; companion:
+     <a href="https://claude.ai/code/artifact/319632e9-7592-44e4-b2e2-57e0d4b8ae69" style="color:inherit">Test Campaign Radar</a></p>
   <h1>Test Infrastructure Build Index</h1>
   <p class="lede">Which hardware teams are currently paying engineers to build the thing
      Nominal sells, ranked from public job board APIs alone, so a rep opens with a named
@@ -600,7 +601,8 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
         <li>Stack detections written as contact and account properties, refreshed on a schedule</li>
         <li>Legacy tool named on a Gong call, matched against the req that predicted it</li>
         <li>Won and lost deals scored retroactively to calibrate the weights</li>
-        <li>Federal award and SBIR data as the timing trigger, both free and public</li>
+        <li>Federal award data as the timing trigger, now live on the
+            <a href="https://claude.ai/code/artifact/319632e9-7592-44e4-b2e2-57e0d4b8ae69">Test Campaign Radar</a></li>
       </ul>
     </div>
   </div>
