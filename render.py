@@ -33,9 +33,7 @@ except Exception:
 
 MIN_MENTIONS = D.get("min_mentions", 2)
 MIN_RATE = D.get("min_rate", 0.05)
-_rel = next((r for r in D["rows"] if r["company"] == "Relativity Space"), None)
-REL = {t: n for t, n in (_rel["legacy"] if _rel else [])}
-REL_POSTINGS = (_rel["builds"] + _rel["operates"]) if _rel else 0
+
 _cl = json.load(open(os.path.join(HERE, "data", "classified.json")))
 _ops = sum(1 for v in _cl.values() for t in v.get("tools", []) if t["usage"] == "operates")
 _lst = sum(1 for v in _cl.values() for t in v.get("tools", []) if t["usage"] == "listed")
@@ -47,29 +45,31 @@ for v in _cl.values():
         if t["name"].strip().upper().startswith("MATLAB"):
             _ml[t["usage"]] += 1
 MATLAB_OPS, MATLAB_LST = _ml["operates"], _ml["listed"]
-_h = next((r for r in D["rows"] if r["company"] == "Hadrian"), None)
-HAD_B, HAD_O = (_h["builds"], _h["operates"]) if _h else (0, 0)
+TOP = D["rows"][0]
 TIERS = Counter(r["tier"] for r in D["rows"])
 NAIVE_CUT = 2427
 LEGACY_PREV = Counter()
 for _r in D["rows"]:
-    for _t, _n in _r["legacy"]:
+    for _t, _n, _u in _r["legacy"]:
         LEGACY_PREV[_t] += 1
 
 
-def chips(pairs, cls="chip"):
-    """Render [tool, count] pairs. Tools below the corroboration threshold are
-    dimmed, so a tool named once cannot pass for a tool named sixteen times."""
+def chips(triples, cls="chip"):
+    """Render [tool, count, source_url] triples as LINKS. Every chip points at a
+    posting whose raw text was verified at build time to contain the tool in a
+    non-interchangeable sentence, so the question "where is this from" is always
+    one click from its answer. Thin evidence (one distinct sentence) renders dim."""
     out = []
-    for t, n in pairs:
+    for t, n, u in triples:
         weak = " weak" if n < MIN_MENTIONS else ""
-        out.append(f'<span class="{cls}{weak}">{e(t)}<span class="ct">&times;{n}</span></span>')
+        out.append(f'<a class="{cls}{weak}" href="{e(u)}" target="_blank" rel="noopener">'
+                   f'{e(t)}<span class="ct">&times;{n}</span></a>')
     return "".join(out)
 
 
 rows_html = []
 for i, r in enumerate(D["rows"], 1):
-    stack = [[t, n] for t, n in r["stack_top"] if t in KNOWN][:5]
+    stack = [[t, n, u] for t, n, u in r["stack_top"] if t in KNOWN][:5]
     legacy = r["legacy"][:4]
     inc = (f'<span class="inc">incumbent: {e(r["incumbent_note"])}</span>'
            if r.get("incumbent_note") else "")
@@ -212,7 +212,9 @@ tr.ev q {{ display:block; color:var(--soft); font-size:.82rem; margin-top:.25rem
 .t-c {{ background:var(--cool-bg); color:var(--cool); }}
 .chip {{ font-family:var(--mono); font-size:.63rem; padding:.14rem .4rem;
   background:var(--signal-bg); color:var(--signal); margin:.1rem .18rem .1rem 0;
-  display:inline-block; white-space:nowrap; }}
+  display:inline-block; white-space:nowrap; text-decoration:none;
+  border-bottom:1px solid transparent; }}
+a.chip:hover {{ border-bottom-color:currentColor; }}
 .chip.warn {{ background:var(--warm-bg); color:var(--warm); }}
 .stk {{ min-width:11rem; }}
 .dim {{ color:var(--dim); }}
@@ -284,7 +286,7 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
      51 companies probed &middot; {D['boards_resolved']} boards resolved &middot;
      {D['total_postings']:,} live postings read &middot; {D['builds_total']} build-posture reqs<br>
      Ashby / Greenhouse / Lever public APIs, no auth, no paid enrichment &middot;
-     $0.11 total compute &middot; reproducible with curl
+     $0.26 total compute &middot; reproducible with curl
   </p>
 </header>
 
@@ -298,8 +300,8 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
       <span class="s">{TIERS['A']} tier A, {TIERS['B']} tier B, {TIERS['C']} tier C</span></div>
     <div class="tile"><span class="k">Excluded</span><span class="v">{len(D['suppressed']) + len(D['competitors'])}</span>
       <span class="s">{len(D['suppressed'])} customers, {len(D['competitors'])} competitor</span></div>
-    <div class="tile"><span class="k">Cost to run</span><span class="v">$0.11</span>
-      <span class="s">one gpt-4o-mini pass</span></div>
+    <div class="tile"><span class="k">Cost to run</span><span class="v">$0.26</span>
+      <span class="s">two gpt-4o-mini passes</span></div>
   </div>
 </section>
 
@@ -345,7 +347,7 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
         <span class="what">gpt-4o-mini at temperature 0, structured output via
           <code>json_schema</code> with <code>strict:true</code>. Returns build-versus-operate
           posture, named stack, and a verbatim evidence quote. {D['keyword_matched']:,} calls.</span>
-        <span class="cost paid">$0.111</span>
+        <span class="cost paid">$0.26</span>
       </div>
       <div class="srow">
         <code>python3 &middot; requests &middot; ThreadPoolExecutor</code>
@@ -402,11 +404,12 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   <h2>Ranked accounts</h2>
   <p>Score is 0 to 8 and is computed in Python from four inputs: build-req volume, named
      legacy tooling, a self-hosted telemetry stack, and the ratio of build reqs to operate
-     reqs. Only tools a company <em>operates</em> count: a tool listed as one interchangeable
-     option in a skills list is ignored, which removed {LISTED_PCT}% of all tool mentions.
-     Counts are distinct sentences rather than distinct postings, so a requirements line
-     pasted across a job family counts once. A tool must then clear {MIN_MENTIONS} contexts,
-     or {int(MIN_RATE*100)}% of that account's test reqs, to score. The model extracts posture and stack per posting; it
+     reqs. The score is 0 to 5, computed in Python from exactly two inputs: build-req
+     volume (0 to 3) and the ratio of build reqs to operate reqs (0 to 2). Detected tooling
+     is <strong>never a scoring input</strong>. Findings 5 and 6 showed tool mentions are
+     mostly vocabulary, not commitments, so tooling is shown for conversation context only:
+     counts are distinct non-interchangeable sentences, and every chip is a link to a
+     posting verified at build time to contain it. The model extracts posture and stack per posting; it
      never sets the score, so a prompt change can move one verdict but cannot silently
      reshuffle the ranking.</p>
   <p><strong style="color:var(--ink)">Two different scopes in one row.</strong> The stack
@@ -417,8 +420,8 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
       <thead><tr>
         <th>#</th><th>Account</th><th>Tier</th><th>Score</th><th>Build</th>
         <th>Ops</th><th>Build&nbsp;%</th>
-        <th>Legacy stack<br><span class="scope">operated, distinct contexts</span></th>
-        <th>Also operated<br><span class="scope">distinct contexts</span></th>
+        <th>Legacy stack<br><span class="scope">operated &middot; chip links to source req</span></th>
+        <th>Also operated<br><span class="scope">chip links to source req</span></th>
       </tr></thead>
       <tbody>
 {"".join(rows_html)}
@@ -430,22 +433,22 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 <section>
   <h2>What a rep opens with</h2>
   <div class="callout">
-    <span class="k">Generated brief &middot; top-ranked account</span>
-    <p>Hadrian is the only account to clear tier A on operated tooling rather than volume.
-       {HAD_B} of its {HAD_B + HAD_O} test-related reqs describe building infrastructure rather
-       than running tests, and it is the one account in the index operating both LabVIEW and
-       TestStand. Its Test Automation Engineer req asks the hire to <em>"develop and maintain
-       automated test sequences in Python, LabVIEW, TestStand, or equivalent"</em> and to
-       <em>"build structured data capture with full traceability across station, DUT,
-       instrument, calibration, operator."</em> That is a job description for Nominal Connect,
-       written by the prospect, naming the two tools Nominal's own launch post positions
-       against.</p>
+    <span class="k">Generated brief &middot; largest build commitment</span>
+    <p>{e(TOP['company'])} has {TOP['builds']} open reqs classified as building test
+       infrastructure against {TOP['operates']} that operate it, the largest build commitment
+       in the index. Its highest-confidence req,
+       <a href="{e(TOP['evidence_url'])}" target="_blank" rel="noopener">{e(TOP['evidence_title'])}</a>,
+       reads: <em>"{e(TOP['evidence'])}"</em>. A company funding that many people to build
+       test infrastructure is paying salaries for what Nominal sells, and every req behind
+       this row is one click away.</p>
   </div>
-  <p style="margin-top:1rem">Once skills-list mentions are stripped, operated legacy
-     tooling is far rarer than a keyword count suggests: LabVIEW at {LEGACY_PREV['LabVIEW']}
-     accounts, MATLAB at {LEGACY_PREV['MATLAB']}, Simulink at {LEGACY_PREV['Simulink']},
-     TestStand at {LEGACY_PREV['TestStand']} and PXI at {LEGACY_PREV['PXI']}. Those are the
-     real displacement conversations, each with the req that proves it one click away.</p>
+  <p style="margin-top:1rem">After the deterministic filter, defensible operated legacy
+     tooling is rare: LabVIEW at {LEGACY_PREV['LabVIEW']} accounts, MATLAB at
+     {LEGACY_PREV['MATLAB']}, MATLAB/Simulink at {LEGACY_PREV['MATLAB/Simulink']}. That
+     scarcity is the finding, not a weakness of the page: job descriptions state what a
+     company will pay someone to do far more reliably than they state what software it runs.
+     The displacement conversation starts from the build commitment, and the chip links
+     provide the tooling context where it genuinely exists.</p>
 </section>
 
 <section>
@@ -470,10 +473,12 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 </section>
 
 <section>
-  <h2>Five ways this data tried to mislead me</h2>
+  <h2>Six ways this data tried to mislead me</h2>
   <p>Each produced confident, wrong output before it was caught. This section matters
-     more than the ranking. The last two were found by a reader asking where a number
-     came from, which is the only reason they are documented rather than shipped.</p>
+     more than the ranking. Findings 4 through 6 were all found the same way: a reader
+     asked where one specific number came from, and the answer did not hold. That is also
+     why the page now guarantees the question structurally instead of answering it case by
+     case.</p>
 
   <div class="finding">
     <h3>1. Naive matching called 98% of the market a lead</h3>
@@ -518,9 +523,9 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
     <p class="tight">This one was not a data bug. Every number was right. The layout was
        wrong. The stack column aggregates across all of an account's postings, while the
        evidence link points at one specific req, and putting them on adjacent rows with no
-       label implied they shared a source. For Relativity, MATLAB came from {REL.get('MATLAB',0)}
-       postings, LabVIEW from {REL.get('LabVIEW',0)} and Simulink from {REL.get('Simulink',0)},
-       out of {REL_POSTINGS} test-related reqs, while the linked req named no tools at all.
+       label implied they shared a source. For Relativity at the time, MATLAB came from 16
+       postings, LabVIEW from 2 and Simulink from 1, out of 63 test-related reqs, while the
+       linked req named no tools at all.
        Anyone who clicked through and searched for LabVIEW would find nothing and would be
        right to distrust every other figure on the page. Both scopes are now labelled, and
        chips carry their mention count so a tool named once cannot pass for one named
@@ -545,6 +550,23 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
        operated legacy tooling at all, and moved Hadrian to the top. The tier bands were
        recalibrated at the same time, because the tightened definition left exactly one
        tier A account across 28, which is not a usable prioritisation.</p>
+  </div>
+  <div class="finding">
+    <h3>6. The fix for finding 5 had the same disease</h3>
+    <p class="was">The model labelled "LabVIEW, Python, or similar test automation tools" as a stack the company operates.</p>
+    <p class="tight">After finding 5, tools only counted when the model judged the company
+       <em>operates</em> them. Auditing that judgement showed 12% of operates calls sat in
+       sentences whose own grammar marks the tool as interchangeable: "or similar", "or
+       equivalent", "such as". Two near-identical True Anomaly sentences received opposite
+       labels, and the number one account's entire operated-legacy evidence was a single
+       "or equivalent" sentence. Two structural changes followed. The interchangeability
+       test is now enforced in Python on the source sentence, not delegated to the model.
+       And tooling was removed from the score entirely, because a distinction the source
+       text only makes 88% reliably cannot order an account list. The ranking now rests
+       only on build commitments, which is the one thing job postings state plainly. Every
+       remaining tool chip is a link to a posting verified at build time to contain that
+       tool in a non-interchangeable sentence: the question that caught findings 4 and 6
+       is now answerable by clicking the number itself.</p>
   </div>
 </section>
 
