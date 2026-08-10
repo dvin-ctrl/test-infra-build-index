@@ -94,14 +94,33 @@ for i, r in enumerate(D["rows"], 1):
   </td>
 </tr>""")
 
+# Exclusion citations link to the public source that names the relationship,
+# with an explicit cue so readers know the proof is one click away.
+CITES = [
+    ("Contrary Research report", "https://research.contrary.com/report/nominal"),
+    ("Contrary Research", "https://research.contrary.com/report/nominal"),
+    ("nominal.io", "https://nominal.io"),
+    ("Tectonic Defense", "https://www.tectonicdefense.com/exclusive-nominal-and-forterra-team-up/"),
+]
+
+
+def cite(reason):
+    out = e(reason)
+    for k, u in CITES:
+        if k in reason:
+            out = out.replace(e(k), f'<a href="{u}" target="_blank" rel="noopener">{e(k)}</a>')
+            break
+    return out + ' <span class="clicknote">&larr; click link</span>'
+
+
 comp_html = "".join(
     f"""<li><strong>{e(c['company'])}</strong>
-    <span class="why">{e(c['excluded_reason'])}</span></li>"""
+    <span class="why">{cite(c['excluded_reason'])}</span></li>"""
     for c in sorted(D.get("competitors", []), key=lambda x: -x["score"]))
 
 sup_html = "".join(
     f"""<li><strong>{e(s['company'])}</strong> <span class="mono dim">score {s['score']}, {s['builds']} build-posture reqs</span>
-    <span class="why">{e(s['excluded_reason'])}</span></li>"""
+    <span class="why">{cite(s['excluded_reason'])}</span></li>"""
     for s in sorted(D["suppressed"], key=lambda x: -x["score"]))
 
 UNREACHED = ["Joby Aviation", "Beta Technologies", "Boston Dynamics", "Stoke Space",
@@ -253,6 +272,9 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   text-transform:none; color:var(--dim); font-weight:400; }}
 .co .inc {{ display:block; font-family:var(--mono); font-size:.6rem; color:var(--warm);
   margin-top:.18rem; }}
+.clicknote {{ font-family:var(--mono); font-size:.6rem; color:var(--dim);
+  white-space:nowrap; }}
+.why a {{ color:var(--signal); }}
 .specs {{ display:flex; flex-direction:column; gap:1.15rem; margin-top:.4rem; }}
 .spec .lbl {{ font-family:var(--mono); font-size:.62rem; letter-spacing:.15em;
   text-transform:uppercase; color:var(--signal); display:block; margin-bottom:.45rem; }}
@@ -439,8 +461,8 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
       <thead><tr>
         <th>#</th><th>Account</th><th>Tier</th><th>Score</th><th>Build</th>
         <th>Ops</th><th>Build&nbsp;%</th>
-        <th>Legacy stack<br><span class="scope">operated &middot; chip links to source req</span></th>
-        <th>Also operated<br><span class="scope">chip links to source req</span></th>
+        <th>Legacy stack<br><span class="scope">operated &middot; click link to see the keyword in its req</span></th>
+        <th>Also operated<br><span class="scope">click link to see the keyword in its req</span></th>
       </tr></thead>
       <tbody>
 {"".join(rows_html)}
@@ -623,13 +645,6 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
             <a href="https://claude.ai/code/artifact/319632e9-7592-44e4-b2e2-57e0d4b8ae69">Test Campaign Radar</a></li>
       </ul>
     </div>
-  </div>
-  <div class="callout" style="margin-top:.9rem">
-    <span class="k">The check I would want first</span>
-    <p>Run this scorer backwards over closed-won accounts. If build-posture density does not
-       separate won from lost, the weights are wrong and should be thrown away rather than
-       shipped. That test costs an afternoon and is the difference between an account score
-       reps trust and one they quietly ignore.</p>
   </div>
 </section>
 
