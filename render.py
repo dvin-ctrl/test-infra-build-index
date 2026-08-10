@@ -36,6 +36,19 @@ MIN_RATE = D.get("min_rate", 0.05)
 _rel = next((r for r in D["rows"] if r["company"] == "Relativity Space"), None)
 REL = {t: n for t, n in (_rel["legacy"] if _rel else [])}
 REL_POSTINGS = (_rel["builds"] + _rel["operates"]) if _rel else 0
+_cl = json.load(open(os.path.join(HERE, "data", "classified.json")))
+_ops = sum(1 for v in _cl.values() for t in v.get("tools", []) if t["usage"] == "operates")
+_lst = sum(1 for v in _cl.values() for t in v.get("tools", []) if t["usage"] == "listed")
+LISTED_PCT = round(_lst / max(_ops + _lst, 1) * 100)
+TOOL_MENTIONS = _ops + _lst
+_ml = Counter()
+for v in _cl.values():
+    for t in v.get("tools", []):
+        if t["name"].strip().upper().startswith("MATLAB"):
+            _ml[t["usage"]] += 1
+MATLAB_OPS, MATLAB_LST = _ml["operates"], _ml["listed"]
+_h = next((r for r in D["rows"] if r["company"] == "Hadrian"), None)
+HAD_B, HAD_O = (_h["builds"], _h["operates"]) if _h else (0, 0)
 TIERS = Counter(r["tier"] for r in D["rows"])
 NAIVE_CUT = 2427
 LEGACY_PREV = Counter()
@@ -389,9 +402,11 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   <h2>Ranked accounts</h2>
   <p>Score is 0 to 8 and is computed in Python from four inputs: build-req volume, named
      legacy tooling, a self-hosted telemetry stack, and the ratio of build reqs to operate
-     reqs. A tool must be named in at least {MIN_MENTIONS} postings to score, so a single
-     engineer's nice-to-have does not read as a company stack; sub-threshold tools are still
-     shown, dimmed, with their count. The model extracts posture and stack per posting; it
+     reqs. Only tools a company <em>operates</em> count: a tool listed as one interchangeable
+     option in a skills list is ignored, which removed {LISTED_PCT}% of all tool mentions.
+     Counts are distinct sentences rather than distinct postings, so a requirements line
+     pasted across a job family counts once. A tool must then clear {MIN_MENTIONS} contexts,
+     or {int(MIN_RATE*100)}% of that account's test reqs, to score. The model extracts posture and stack per posting; it
      never sets the score, so a prompt change can move one verdict but cannot silently
      reshuffle the ranking.</p>
   <p><strong style="color:var(--ink)">Two different scopes in one row.</strong> The stack
@@ -402,8 +417,8 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
       <thead><tr>
         <th>#</th><th>Account</th><th>Tier</th><th>Score</th><th>Build</th>
         <th>Ops</th><th>Build&nbsp;%</th>
-        <th>Legacy stack<br><span class="scope">across all postings</span></th>
-        <th>Also detected<br><span class="scope">across all postings</span></th>
+        <th>Legacy stack<br><span class="scope">operated, distinct contexts</span></th>
+        <th>Also operated<br><span class="scope">distinct contexts</span></th>
       </tr></thead>
       <tbody>
 {"".join(rows_html)}
@@ -415,21 +430,22 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 <section>
   <h2>What a rep opens with</h2>
   <div class="callout">
-    <span class="k">Generated brief &middot; highest build ratio</span>
-    <p>Hadrian has 12 open reqs that describe building test infrastructure and one that
-       describes running tests, the most lopsided ratio in the index. Their Test Automation
-       Engineer req asks the hire to <em>"develop and maintain automated test sequences in
-       Python, LabVIEW, TestStand, or equivalent"</em> and to
+    <span class="k">Generated brief &middot; top-ranked account</span>
+    <p>Hadrian is the only account to clear tier A on operated tooling rather than volume.
+       {HAD_B} of its {HAD_B + HAD_O} test-related reqs describe building infrastructure rather
+       than running tests, and it is the one account in the index operating both LabVIEW and
+       TestStand. Its Test Automation Engineer req asks the hire to <em>"develop and maintain
+       automated test sequences in Python, LabVIEW, TestStand, or equivalent"</em> and to
        <em>"build structured data capture with full traceability across station, DUT,
        instrument, calibration, operator."</em> That is a job description for Nominal Connect,
        written by the prospect, naming the two tools Nominal's own launch post positions
        against.</p>
   </div>
-  <p style="margin-top:1rem">Across the ranked index, MATLAB is named at {LEGACY_PREV['MATLAB']}
-     accounts, Simulink at {LEGACY_PREV['Simulink']}, LabVIEW at {LEGACY_PREV['LabVIEW']},
-     dSPACE at {LEGACY_PREV['dSPACE']}, PXI at {LEGACY_PREV['PXI']}, TestStand at
-     {LEGACY_PREV['TestStand']} and DIAdem at {LEGACY_PREV['DIAdem']}. Each is a named
-     displacement conversation with the req that proves it one click away.</p>
+  <p style="margin-top:1rem">Once skills-list mentions are stripped, operated legacy
+     tooling is far rarer than a keyword count suggests: LabVIEW at {LEGACY_PREV['LabVIEW']}
+     accounts, MATLAB at {LEGACY_PREV['MATLAB']}, Simulink at {LEGACY_PREV['Simulink']},
+     TestStand at {LEGACY_PREV['TestStand']} and PXI at {LEGACY_PREV['PXI']}. Those are the
+     real displacement conversations, each with the req that proves it one click away.</p>
 </section>
 
 <section>
@@ -454,9 +470,10 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 </section>
 
 <section>
-  <h2>Four ways this data tried to mislead me</h2>
-  <p>All three produced confident, wrong output before they were caught. This section
-     matters more than the ranking.</p>
+  <h2>Five ways this data tried to mislead me</h2>
+  <p>Each produced confident, wrong output before it was caught. This section matters
+     more than the ranking. The last two were found by a reader asking where a number
+     came from, which is the only reason they are documented rather than shipped.</p>
 
   <div class="finding">
     <h3>1. Naive matching called 98% of the market a lead</h3>
@@ -510,6 +527,24 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
        sixteen times. Scoring now requires a tool to appear in at least
        {MIN_MENTIONS} postings, or in {int(MIN_RATE*100)}% of that account's test reqs,
        which reordered the top of the table.</p>
+  </div>
+  <div class="finding">
+    <h3>5. Two thirds of the tool mentions were resume filler</h3>
+    <p class="was">MATLAB appeared to be the dominant legacy stack in the index. {MATLAB_LST} of its {MATLAB_OPS + MATLAB_LST} mentions were skills-list boilerplate.</p>
+    <p class="tight">Two compounding errors. First, recruiters paste the same requirements
+       line across a whole job family, so counting postings counted the template: at
+       Relativity, 16 reqs naming MATLAB collapsed to 9 distinct sentences, at Rocket Lab
+       28 collapsed to 15. Since scoring had just been made to depend on prevalence, that
+       rewarded copy-paste. Counting now dedupes on the sentence, not the posting.
+       Second and worse, the classifier extracted named tools without asking whether the
+       company <em>runs</em> the tool. "Familiarity with scripting languages such as Python
+       or MATLAB" is a recruiter listing two acceptable languages, not a MATLAB test stack.
+       Re-classified with an explicit operates-versus-listed judgement, {LISTED_PCT}% of all
+       {TOOL_MENTIONS} tool mentions turned out to be listed-only. Scoring now counts only
+       tools a company operates, which dropped Relativity from first place to fifth with no
+       operated legacy tooling at all, and moved Hadrian to the top. The tier bands were
+       recalibrated at the same time, because the tightened definition left exactly one
+       tier A account across 28, which is not a usable prioritisation.</p>
   </div>
 </section>
 

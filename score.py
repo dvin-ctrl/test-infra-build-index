@@ -60,8 +60,28 @@ def canon(tool):
     return CANON.get(k, (tool or "").strip())
 
 
+def contexts(company, tool, urls):
+    """Count DISTINCT sentences naming `tool`, not distinct postings.
+
+    Recruiters paste the same requirements line across a whole job family, so
+    counting postings counts the template rather than the evidence. At Relativity
+    16 reqs naming MATLAB collapsed to 9 real contexts; at Rocket Lab 28 to 15.
+    Since the score depends on prevalence, counting the template would have
+    rewarded copy-paste.
+    """
+    raw = {p["url"]: p["text"] for p in POSTINGS.get(company, [])}
+    seen = set()
+    for u in urls:
+        t = re.sub(r"\s+", " ", raw.get(u, ""))
+        m = re.search(r"[^.<>|]{0,150}\b" + re.escape(tool) + r"\b[^.<>|]{0,80}", t, re.I)
+        key = re.sub(r"[^a-z ]", "", m.group(0).lower()).strip()[:90] if m else u
+        seen.add(key)
+    return len(seen)
+
+
 def main():
-    per = defaultdict(lambda: {"builds": [], "operates": [], "neither": 0, "stack": Counter()})
+    per = defaultdict(lambda: {"builds": [], "operates": [], "neither": 0,
+                               "run_urls": defaultdict(list), "listed": Counter()})
     for v in CL.values():
         co = v["company"]
         p = per[co]
@@ -71,18 +91,27 @@ def main():
             p["operates"].append(v)
         else:
             p["neither"] += 1
-        for t in v.get("stack", []):
-            if t and len(t) < 30:
-                p["stack"][canon(t)] += 1
+        # Only tools the company actually RUNS count. A tool listed as one
+        # interchangeable option in a skills list ("Python or MATLAB") says
+        # nothing about their stack.
+        for t in v.get("tools", []):
+            name, usage = (t.get("name") or "").strip(), t.get("usage")
+            if not name or len(name) >= 30:
+                continue
+            if usage == "operates":
+                p["run_urls"][canon(name)].append(v["url"])
+            else:
+                p["listed"][canon(name)] += 1
 
     rows, suppressed, competitors = [], [], []
     for co, p in per.items():
         b = BOARDS.get(co, {})
-        # Carry counts, not just presence. Presence alone made a tool named once
-        # render identically to one named sixteen times.
-        legacy_hits = sorted(((t, n) for t, n in p["stack"].items() if norm(t) in LEGACY),
+        # Counts are distinct contexts, not postings, and only for tools the
+        # company operates.
+        stack = {t: contexts(co, t, u) for t, u in p["run_urls"].items()}
+        legacy_hits = sorted(((t, n) for t, n in stack.items() if norm(t) in LEGACY),
                              key=lambda x: (-x[1], x[0]))
-        diy_hits = sorted(((t, n) for t, n in p["stack"].items() if norm(t) in DIY),
+        diy_hits = sorted(((t, n) for t, n in stack.items() if norm(t) in DIY),
                           key=lambda x: (-x[1], x[0]))
         sig = len(p["builds"]) + len(p["operates"]) or 1
 
@@ -102,7 +131,11 @@ def main():
         ratio = nb / total if total else 0
         score += 2 if ratio >= 0.6 else 1 if ratio >= 0.4 else 0             # build-heavy posture
 
-        tier = "A" if score >= 6 else "B" if score >= 4 else "C"
+        # Bands recalibrated when the signal definition tightened. Restricting
+        # scoring to operated tools removed most of the legacy component, so the
+        # old 6/4 cutoffs left exactly one tier A account across 28, which is not
+        # a usable prioritisation for a rep.
+        tier = "A" if score >= 5 else "B" if score >= 4 else "C"
         best = sorted(p["builds"], key=lambda x: (x["confidence"] != "high", -len(x.get("evidence") or "")))
         row = {
             "company": co,
@@ -117,7 +150,9 @@ def main():
             "legacy": [[t, n] for t, n in legacy_hits],
             "legacy_scoring": strong_legacy,
             "diy": [[t, n] for t, n in diy_hits],
-            "stack_top": [[t, n] for t, n in p["stack"].most_common(8)],
+            "stack_top": sorted(([t, n] for t, n in stack.items()), key=lambda x: (-x[1], x[0]))[:8],
+            "listed_only": sorted(([t, n] for t, n in p["listed"].items()
+                                   if t not in stack), key=lambda x: (-x[1], x[0]))[:6],
             "score": score,
             "tier": tier,
             "evidence": (best[0].get("evidence") or "")[:230] if best else "",

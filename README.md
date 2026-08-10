@@ -46,8 +46,11 @@ computes the account score from four inputs (build-req volume, named legacy tool
 self-hosted telemetry stack, and build-to-operate ratio). A prompt change can move one
 verdict but cannot silently reshuffle the ranking.
 
-**Tools score on prevalence, not presence.** A tool counts toward the score only if it is
-named in at least 2 postings, or in at least 5% of that account's test-related reqs. A
+**Tools score on operation, not mention.** A tool counts only if the posting indicates the
+company actually runs it, not if it appears as one interchangeable option in a skills list.
+Counts are distinct sentences, not distinct postings, so a requirements line pasted across a
+job family counts once. A tool must then clear 2 contexts, or 5% of that account's
+test-related reqs. A
 tool named once out of 63 reqs is one engineer's nice-to-have; the same tool named once
 at an account with 13 test reqs is a real signal. Sub-threshold tools are still shown,
 dimmed, with their count.
@@ -57,10 +60,10 @@ posting averages ~9.4k characters and the tool names cluster in two or three pla
 Excerpting cut input tokens from 2.42M to 582K, a 76% reduction, and improved precision
 by removing benefits boilerplate and EEO statements the model would otherwise weigh.
 
-## Four ways this data tried to mislead me
+## Five ways this data tried to mislead me
 
-This is the part worth reading. All four produced confident, wrong output before they
-were caught.
+This is the part worth reading. Each produced confident, wrong output before it was
+caught. The last two were found by a reader asking where a number came from.
 
 ### 1. Naive matching called 98% of the market a lead
 
@@ -119,6 +122,27 @@ Anyone who clicked through and searched for LabVIEW would find nothing, and woul
 right to distrust every other figure on the page. Both scopes are now labelled, chips
 carry their mention count, and scoring requires prevalence. It was caught by a reader
 asking where a number came from, which is the only reason it is documented here.
+
+### 5. Two thirds of the tool mentions were resume filler
+
+MATLAB looked like the dominant legacy stack in the index. **88 of its 113 mentions were
+skills-list boilerplate.**
+
+Two compounding errors. Recruiters paste the same requirements line across a whole job
+family, so counting postings counted the template: 16 Relativity reqs naming MATLAB
+collapsed to 9 distinct sentences, 28 Rocket Lab reqs to 15. Since scoring had just been
+made to depend on prevalence, that rewarded copy-paste. Counting now dedupes on the
+sentence.
+
+Worse, the classifier extracted named tools without asking whether the company *runs*
+them. "Familiarity with scripting languages such as Python or MATLAB" is a recruiter
+listing two acceptable languages, not a MATLAB test stack. Re-classified with an explicit
+`operates` versus `listed` judgement, **67% of all 851 tool mentions were listed-only.**
+
+Scoring now counts only operated tools. Relativity fell from first to fifth with no
+operated legacy tooling at all; Hadrian moved to the top. Tier bands were recalibrated in
+the same pass, because the tightened definition left exactly one tier A account across 28,
+which is not a usable prioritisation for a rep.
 
 ## Exclusions
 

@@ -47,11 +47,22 @@ SCHEMA = {
     "additionalProperties": False,
     "properties": {
         "posture": {"type": "string", "enum": ["builds_tooling", "operates_tests", "neither"]},
-        "stack": {"type": "array", "items": {"type": "string"}},
+        "tools": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": False,
+                "properties": {
+                    "name": {"type": "string"},
+                    "usage": {"type": "string", "enum": ["operates", "listed"]},
+                },
+                "required": ["name", "usage"],
+            },
+        },
         "evidence": {"type": "string"},
         "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
     },
-    "required": ["posture", "stack", "evidence", "confidence"],
+    "required": ["posture", "tools", "evidence", "confidence"],
 }
 
 SYSTEM = """You read engineering job descriptions and decide one thing: is this company paying this hire to BUILD AND MAINTAIN test/data infrastructure, or to OPERATE tests using tooling that already exists?
@@ -61,7 +72,13 @@ posture:
 - "operates_tests": the req is about running, executing, or analysing tests with existing tooling. The hire is a user of the stack, not its author.
 - "neither": the tool names are incidental (e.g. listed only as a nice-to-have skill, or the role is unrelated).
 
-stack: named test/data tools ONLY, verbatim as written (LabVIEW, TestStand, MATLAB, Simulink, dSPACE, InfluxDB, Grafana, PXI, DAQ, ...). Empty array if none named. Do not infer tools that are not written.
+tools: named test/data tools ONLY, verbatim as written (LabVIEW, TestStand, MATLAB, Simulink, dSPACE, InfluxDB, Grafana, PXI, DAQ, ...). Empty array if none named. Do not infer tools that are not written. Do NOT include general-purpose languages (Python, C++, Java, Go, Rust) unless they name a specific test framework built on them.
+
+For each tool set "usage":
+- "operates": the posting indicates this company actually runs this tool. Signals: it is named as the system the hire will use, build on, maintain or migrate off; it appears as a specific toolchain ("MATLAB/Simulink", "LabVIEW and TestStand"); the sentence describes work performed IN it ("model-based design using X", "automated test sequences in X", "our X-based rigs").
+- "listed": the tool appears only as one interchangeable option in a skills list, where any one item would satisfy the requirement. Signals: joined by "or", "such as", "e.g.", "and/or" with other tools of the same kind. "Familiarity with scripting languages such as Python or MATLAB" is "listed", NOT "operates".
+
+When genuinely ambiguous, choose "listed". Overstating what a company runs is the more expensive error.
 
 evidence: one verbatim sentence from the posting, max 220 chars, that justifies the posture. Must be copied exactly from the text, not paraphrased. If you cannot find one, return "".
 
@@ -156,6 +173,8 @@ def main():
             k, co, j, s = futs[f]
             res = f.result()
             if res:
+                res["stack"] = [t["name"] for t in res.get("tools", [])]
+                res["operates"] = [t["name"] for t in res.get("tools", []) if t["usage"] == "operates"]
                 cache[k] = {"company": co, "title": j["title"], "url": j["url"],
                             "keywords": s, **res}
             done += 1
