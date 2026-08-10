@@ -233,6 +233,17 @@ ul.plain .why {{ display:block; font-family:var(--mono); font-size:.65rem;
 .finding .was {{ font-family:var(--mono); font-size:.75rem; color:var(--hot); margin:0 0 .45rem; }}
 code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
   border:1px solid var(--line); padding:.06em .32em; }}
+.specs {{ display:flex; flex-direction:column; gap:1.15rem; margin-top:.4rem; }}
+.spec .lbl {{ margin-bottom:.45rem; color:var(--signal); }}
+.srow {{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1.15fr) auto;
+  gap:.35rem 1.1rem; align-items:baseline; background:var(--panel);
+  border:1px solid var(--line); padding:.62rem .85rem; margin-bottom:.35rem; }}
+@media (max-width:58rem) {{ .srow {{ grid-template-columns:1fr; }} }}
+.srow code {{ font-size:.7rem; overflow-wrap:anywhere; background:none; border:0;
+  padding:0; color:var(--ink); }}
+.srow .what {{ font-size:.82rem; color:var(--soft); }}
+.srow .cost {{ font-family:var(--mono); font-size:.62rem; white-space:nowrap;
+  padding:.15rem .45rem; justify-self:start; background:var(--cool-bg); color:var(--cool); }}
 </style>
 
 <div class="wrap">
@@ -345,13 +356,60 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
 </section>
 
 <section>
-  <h2>Method</h2>
-  <p>One endpoint: <code>POST api.usaspending.gov/api/v2/search/spending_by_award</code>,
-     free and unauthenticated, queried per target with recipient-name validation on every
-     hit. Joined in Python against the build-posture data from the companion page's
-     pipeline. No model runs in this layer: award facts are filed, posture was already
-     classified, and the brief is string assembly. Quotes are substrings of the federal
-     record, so verification is a text search on the linked page.</p>
+  <h2>Method and tech stack</h2>
+  <p>No model runs in this layer: award facts are filed, posture was already classified on
+     the companion pipeline, and the brief is string assembly. Quotes are substrings of the
+     federal record, so verification is a text search on the linked page.</p>
+  <div class="specs">
+    <div class="spec">
+      <span class="lbl">Ingest</span>
+      <div class="srow">
+        <code>POST api.usaspending.gov/api/v2/search/spending_by_award</code>
+        <span class="what">Federal contracts per target since 2024: amount, agency, dates,
+          description, and the award record URL. Every recipient validated by name-token
+          overlap; 122 wrong-company hits rejected and logged.</span>
+        <span class="cost">free, no auth</span>
+      </div>
+      <div class="srow">
+        <code>Ashby / Greenhouse / Lever public job boards</code>
+        <span class="what">The hiring-posture half of the join, inherited from the
+          companion pipeline: 3,544 postings classified build-versus-operate.</span>
+        <span class="cost">free, no auth</span>
+      </div>
+    </div>
+    <div class="spec">
+      <span class="lbl">Synthesis</span>
+      <div class="srow">
+        <code>python3 &middot; deterministic join</code>
+        <span class="what">Awards x build posture joined and ranked in plain Python. The
+          per-account brief is assembled from filed fields by string concatenation, so it
+          structurally cannot claim anything its linked sources do not.</span>
+        <span class="cost">free, no LLM</span>
+      </div>
+      <div class="srow">
+        <code>gpt-4o-mini (upstream, companion pipeline)</code>
+        <span class="what">The only model in the whole system, used once upstream to
+          classify req posture. Total cost across both pages: $0.26.</span>
+        <span class="cost">$0 this layer</span>
+      </div>
+    </div>
+    <div class="spec">
+      <span class="lbl">Orchestration</span>
+      <div class="srow">
+        <code>Claude Code (Anthropic)</code>
+        <span class="what">Agentic build environment. Authored, ran, and audited every
+          stage, including the five-account pilot that caught this layer's three defects
+          before publication.</span>
+        <span class="cost">dev environment</span>
+      </div>
+      <div class="srow">
+        <code>git &middot; GitHub</code>
+        <span class="what">Scanner, classifier, join, and both renderers are published in
+          one repository; every methodology change is a commit with its reasoning.</span>
+        <span class="cost">free</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer style="border-top:1px solid var(--line);padding-top:1.2rem">

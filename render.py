@@ -370,6 +370,24 @@ code {{ font-family:var(--mono); font-size:.85em; background:var(--panel);
         <span class="cost free">free</span>
       </div>
     </div>
+
+    <div class="spec">
+      <span class="lbl">Orchestration</span>
+      <div class="srow">
+        <code>Claude Code (Anthropic)</code>
+        <span class="what">Agentic build environment. Authored, ran, and audited every stage
+          of this pipeline in one loop: probing the APIs, measuring false-positive rates,
+          and re-verifying each finding against raw source data before it shipped. The six
+          findings below were caught, fixed, and documented in the same environment.</span>
+        <span class="cost free">dev environment</span>
+      </div>
+      <div class="srow">
+        <code>git &middot; GitHub</code>
+        <span class="what">Every methodology change is a commit with its reasoning in the
+          message, so the scoring's history is auditable, not just its current state.</span>
+        <span class="cost free">free</span>
+      </div>
+    </div>
   </div>
 
   <p class="notused"><strong>Deliberately not used:</strong> no LinkedIn, no paid enrichment
